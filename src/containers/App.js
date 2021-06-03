@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
-import Cat from './Cat';
+import LogInPage from './LogInPage';
+import SignUpPage from './SignUpPage';
 import Home from './Home';
 
 const App = () => (
@@ -11,8 +12,11 @@ const App = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/cat">
-        <Cat />
+      <Route path="/login">
+        <LogInPage />
+      </Route>
+      <Route path="/signup">
+        <SignUpPage />
       </Route>
     </Switch>
   </Router>

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import fetch from 'node-fetch';
 import {
   FETCH_BREEDS_REQUEST,
@@ -26,21 +27,26 @@ export const fetchBreeds = () => async dispatch => {
     dispatch(fetchBreedsError(e));
   }
 };
-export const fetchCat = breed => async dispatch => {
+export const fetchCat = data => async dispatch => {
   dispatch(fetchCatRequest());
-  const xAPIKey = 'x-api-key';
   try {
+    const jsonUpdate = { user: data };
+    console.log(JSON.stringify(jsonUpdate));
     const getCat = await fetch(
-      `https://api.thecatapi.com/v1/images/search?breed_id=${breed}`,
+      'http://localhost:3002/signup',
       {
+        method: 'POST',
+        mode: 'cors',
         headers: {
-          [xAPIKey]: '20874f76-4233-4e78-9f44-e30c018c07e8',
+          'Content-type': 'application/json',
         },
+        body: JSON.stringify(jsonUpdate),
       },
     );
     const catJSON = await getCat.json();
     dispatch(fetchCatSuccess(catJSON));
   } catch (e) {
+    console.log(e);
     dispatch(fetchCatError(e));
   }
 };
