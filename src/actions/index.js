@@ -8,8 +8,10 @@ import {
   FETCH_CAT_SUCCESS,
   FETCH_CAT_ERROR,
   UPDATE_FILTER,
+  ALERT_MESSAGE,
 } from './action-types';
 
+export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
 export const updateFilter = payload => ({ type: UPDATE_FILTER, payload });
 export const fetchBreedsRequest = () => ({ type: FETCH_BREEDS_REQUEST });
 export const fetchBreedsSuccess = breeds => ({ type: FETCH_BREEDS_SUCCESS, payload: breeds });

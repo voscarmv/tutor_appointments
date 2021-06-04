@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+// import propTypes from 'prop-types';
 import {
   Alert,
   Button,
 } from 'react-bootstrap';
+import { alertMessage } from '../actions';
 
-const AlertMsg = ({ content, type, show }) => {
-  const [showIt, setShowIt] = useState(
-    {
-      show,
-    },
-  );
+const AlertMsg = () => {
+  const alertData = useSelector(state => state.alertState);
+  const dispatch = useDispatch();
   const handleDismiss = () => {
-    setShowIt({ show: false });
+    dispatch(
+      alertMessage(
+        {
+          ...alertData,
+          show: false,
+        },
+      ),
+    );
   };
-  if (showIt.show) {
+  if (alertData.show) {
     return (
-      <Alert variant={type} onDismiss={handleDismiss}>
+      <Alert variant={alertData.type} onDismiss={handleDismiss}>
         <p>
-          {content}
+          {alertData.content}
         </p>
         <p>
           <Button onClick={handleDismiss}>Ok</Button>
@@ -31,10 +37,10 @@ const AlertMsg = ({ content, type, show }) => {
   );
 };
 
-AlertMsg.propTypes = {
-  content: propTypes.string.isRequired,
-  type: propTypes.string.isRequired,
-  show: propTypes.bool.isRequired,
-};
+// AlertMsg.propTypes = {
+//   content: propTypes.string.isRequired,
+//   type: propTypes.string.isRequired,
+//   show: propTypes.bool.isRequired,
+// };
 
 export default AlertMsg;
