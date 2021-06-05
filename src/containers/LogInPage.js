@@ -1,16 +1,44 @@
-import React from 'react';
+/* eslint-disable no-console */
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchLogIn } from '../actions/index';
 import LogIn from '../components/LogIn';
 
-const LogInPage = () => (
-  <div className="m-3">
-    <h5>
-      Log in
-      <span aria-label="cat" role="img">🐈</span>
-    </h5>
-    <p>
-      <LogIn />
-    </p>
-  </div>
-);
+const LogInPage = () => {
+  const dispatch = useDispatch();
+  const [credentials, setCredentials] = useState(
+    {
+      email: '',
+      password: '',
+    },
+  );
+  const handleUserChange = e => {
+    setCredentials(
+      {
+        ...credentials,
+        email: e.target.value,
+      },
+    );
+  };
+  const handlePasswordChange = e => {
+    setCredentials(
+      {
+        ...credentials,
+        password: e.target.value,
+      },
+    );
+  };
+  const handleLogIn = e => {
+    e.preventDefault();
+    dispatch(fetchLogIn(credentials));
+  };
+  return (
+    <LogIn
+      handleLogIn={handleLogIn}
+      handleUserChange={handleUserChange}
+      handlePasswordChange={handlePasswordChange}
+    />
+  );
+};
 
 export default LogInPage;
