@@ -5,6 +5,7 @@ import catReducer from './cat';
 import filterReducer from './filter';
 import signUpReducer from './signup';
 import logInReducer from './login';
+import authReducer from './auth';
 
 export default combineReducers({
   breedState: breedMenuReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   signUpState: signUpReducer,
   logInState: logInReducer,
   alertState: alertReducer,
+  authState: authReducer,
 });

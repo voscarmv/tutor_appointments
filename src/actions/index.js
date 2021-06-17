@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import fetch from 'node-fetch';
+import request from 'request';
 import {
   FETCH_BREEDS_REQUEST,
   FETCH_BREEDS_SUCCESS,
@@ -13,11 +14,14 @@ import {
   FETCH_LOGIN_REQUEST,
   FETCH_LOGIN_SUCCESS,
   FETCH_LOGIN_ERROR,
+  LOGIN_DISMISS,
   UPDATE_FILTER,
   ALERT_MESSAGE,
+  AUTH_KEY,
 } from './action-types';
 
 export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
+export const authKey = payload => ({ type: AUTH_KEY, payload });
 export const updateFilter = payload => ({ type: UPDATE_FILTER, payload });
 export const fetchBreedsRequest = () => ({ type: FETCH_BREEDS_REQUEST });
 export const fetchBreedsSuccess = breeds => ({ type: FETCH_BREEDS_SUCCESS, payload: breeds });
@@ -150,62 +154,75 @@ export const fetchSignUp = data => async dispatch => {
 };
 
 export const fetchLogInRequest = () => ({ type: FETCH_LOGIN_REQUEST });
-export const fetchLogInSuccess = cat => ({ type: FETCH_LOGIN_SUCCESS, payload: cat });
+export const fetchLogInSuccess = () => ({ type: FETCH_LOGIN_SUCCESS });
 export const fetchLogInError = error => ({ type: FETCH_LOGIN_ERROR, payload: error });
+export const logInDismiss = () => ({ type: LOGIN_DISMISS });
 
 export const fetchLogIn = data => async dispatch => {
-  dispatch(
-    alertMessage(
-      {
-        content: 'Logging in...',
-        type: 'info',
-        show: true,
-      },
-    ),
-  );
+  dispatch(fetchLogInRequest());
   dispatch(fetchLogInRequest());
   try {
     console.log(data);
     const jsonUpdate = { user: data };
     console.log(JSON.stringify(jsonUpdate));
-    const getCat = await fetch(
+    const getLogin = await fetch(
       'http://localhost:3002/login',
       {
         method: 'POST',
-        mode: 'cors',
         headers: {
+          'accept-encoding': 'gzip, deflate',
+          'accept-language': 'en-US,en;q=0.8',
           'content-type': 'application/json',
+          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36',
         },
         body: JSON.stringify(jsonUpdate),
       },
     );
-    console.log(getCat);
-    // const catJSON = await getCat.json();
-    // console.log(getCat);
-    if (getCat.status !== 200) {
-      throw getCat.statusText;
+    // console.log(await getLogin.json());
+    const loginJSON = getLogin.headers.get('authorization');
+    if (loginJSON === null) {
+      throw new Error('Check your username and/or password.');
     }
-    dispatch(
-      alertMessage(
-        {
-          content: 'Logged in successfully.',
-          type: 'success',
-          show: true,
-        },
-      ),
+    // const outJSON = await getLogin.json();
+    // console.log(outJSON);
+    console.log(loginJSON);
+    // const bodyresp = await getLogin.json();
+    // console.log(bodyresp);
+    getLogin.headers.forEach(
+      (v, n) => {
+        console.log(`name ${n}`);
+        console.log(`val ${v}`);
+      },
     );
-    dispatch(fetchLogInSuccess(getCat));
+
+    request(
+      {
+        uri: 'http://localhost:3002/login',
+        headers: {
+          'accept-encoding': 'gzip, deflate',
+          'accept-language': 'en-US,en;q=0.8',
+          'content-type': 'application/json',
+          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36',
+        },
+        method: 'POST',
+        body: JSON.stringify(jsonUpdate),
+      },
+      (err, httpResponse) => {
+        if (err) {
+          return console.error(err);
+        }
+        console.log(httpResponse);
+        return true;
+      },
+    );
+
+    // console.log(getLogin);
+    if (getLogin.status !== 200) {
+      throw getLogin.statusText;
+    }
+    dispatch(fetchLogInSuccess(getLogin));
   } catch (e) {
     console.log(e);
-    dispatch(
-      alertMessage(
-        {
-          content: `Log-in failed: ${e}`,
-          type: 'danger',
-          show: true,
-        },
-      ),
-    );
     dispatch(fetchLogInError(e));
   }
 };
