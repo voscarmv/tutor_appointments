@@ -1,43 +1,51 @@
-import { Navbar, Button, Collapse } from 'react-bootstrap';
-import React, { useState } from 'react';
+import { Navbar, Button } from 'react-bootstrap';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import BreedFilter from './BreedFilter';
-import BreedMenu from './BreedMenu';
+import { fetchLogOut, dismissAlert } from '../actions';
+import AlertMsg from '../components/AlertMsg';
 
 const Nav = () => {
-  const [open, setOpen] = useState(
-    false,
-  );
+  const authKeyState = useSelector(state => state.authState);
+  const dispatch = useDispatch();
+  const handleLogOut = e => {
+    e.preventDefault();
+    dispatch(fetchLogOut(authKeyState.key));
+  };
+  const alertData = useSelector(state => state.logOutState);
+  const {
+    content,
+    type,
+    show,
+  } = alertData;
+  const handleDismiss = () => {
+    dispatch(dismissAlert());
+  };
   return (
     <>
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand>
-          <span aria-label="cat" role="img">😺</span>
-          <Link to="/">The Cat-alog</Link>
+          <span className="mr-3" aria-label="tutor" role="img">👩‍🏫</span>
+          <Link to="/">Tutor appointments</Link>
         </Navbar.Brand>
-        <div className="container-fluid">
+        <div className={`container-fluid${authKeyState.uid === null ? ' d-none' : ''}`}>
           <div className="ml-auto text-light">
-            Show breed:
-          </div>
-          <div className="p-3">
-            <BreedMenu />
-          </div>
-          <div className="">
+            {authKeyState.email}
             <Button
-              onClick={() => { setOpen(!open); }}
-              aria-controls="collapse-filter-form"
-              aria-expanded={open}
+              className="ml-3"
+              onClick={handleLogOut}
             >
-              Filter
+              Log out
             </Button>
           </div>
         </div>
       </Navbar>
-      <Collapse in={open}>
-        <div id="collapse-filter-form">
-          <BreedFilter />
-        </div>
-      </Collapse>
+      <AlertMsg
+        content={content}
+        type={type}
+        show={show}
+        handleDismiss={handleDismiss}
+      />
     </>
   );
 };

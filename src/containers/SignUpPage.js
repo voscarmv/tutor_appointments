@@ -1,11 +1,21 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchSignUp } from '../actions/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSignUp, dismissAlert } from '../actions/index';
 import SignUp from '../components/SignUp';
+import AlertMsg from '../components/AlertMsg';
 
 const SignUpPage = () => {
   const dispatch = useDispatch();
+  const alertData = useSelector(state => state.signUpState);
+  const {
+    content,
+    type,
+    show,
+  } = alertData;
+  const handleDismiss = () => {
+    dispatch(dismissAlert());
+  };
   const [credentials, setCredentials] = useState(
     {
       email: '',
@@ -33,11 +43,19 @@ const SignUpPage = () => {
     dispatch(fetchSignUp(credentials));
   };
   return (
-    <SignUp
-      handleSignUp={handleSignUp}
-      handleUserChange={handleUserChange}
-      handlePasswordChange={handlePasswordChange}
-    />
+    <div>
+      <AlertMsg
+        content={content}
+        type={type}
+        show={show}
+        handleDismiss={handleDismiss}
+      />
+      <SignUp
+        handleSignUp={handleSignUp}
+        handleUserChange={handleUserChange}
+        handlePasswordChange={handlePasswordChange}
+      />
+    </div>
   );
 };
 

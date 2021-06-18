@@ -2,13 +2,13 @@ import {
   FETCH_LOGIN_REQUEST,
   FETCH_LOGIN_SUCCESS,
   FETCH_LOGIN_ERROR,
-  LOGIN_DISMISS,
+  DISMISS,
 } from '../actions/action-types';
 
 const initialState = {
-  content: 'Hello',
-  type: 'success',
-  show: true,
+  content: '',
+  type: '',
+  show: false,
 };
 
 const logInReducer = (state = initialState, action) => {
@@ -24,7 +24,7 @@ const logInReducer = (state = initialState, action) => {
       type: 'success',
       show: true,
     };
-  } if (action.type === LOGIN_DISMISS) {
+  } if (action.type === DISMISS) {
     return {
       content: '',
       type: '',

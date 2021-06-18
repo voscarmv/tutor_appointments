@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchLogIn, logInDismiss } from '../actions/index';
+import { fetchLogIn, dismissAlert } from '../actions/index';
 import LogIn from '../components/LogIn';
 import AlertMsg from '../components/AlertMsg';
 
@@ -14,7 +14,7 @@ const LogInPage = () => {
     show,
   } = alertData;
   const handleDismiss = () => {
-    dispatch(logInDismiss());
+    dispatch(dismissAlert());
   };
   const [credentials, setCredentials] = useState(
     {

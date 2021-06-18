@@ -1,7 +1,7 @@
 import {
-  FETCH_SIGNUP_REQUEST,
-  FETCH_SIGNUP_SUCCESS,
-  FETCH_SIGNUP_ERROR,
+  FETCH_LOGOUT_REQUEST,
+  FETCH_LOGOUT_SUCCESS,
+  FETCH_LOGOUT_ERROR,
   DISMISS,
 } from '../actions/action-types';
 
@@ -11,16 +11,16 @@ const initialState = {
   show: false,
 };
 
-const signUpReducer = (state = initialState, action) => {
-  if (action.type === FETCH_SIGNUP_REQUEST) {
+const logOutReducer = (state = initialState, action) => {
+  if (action.type === FETCH_LOGOUT_REQUEST) {
     return {
-      content: 'Signing up...',
+      content: 'Logging out...',
       type: 'info',
       show: true,
     };
-  } if (action.type === FETCH_SIGNUP_SUCCESS) {
+  } if (action.type === FETCH_LOGOUT_SUCCESS) {
     return {
-      content: 'Signed up successfully.',
+      content: 'Logged out successfully.',
       type: 'success',
       show: true,
     };
@@ -30,9 +30,9 @@ const signUpReducer = (state = initialState, action) => {
       type: '',
       show: false,
     };
-  } if (action.type === FETCH_SIGNUP_ERROR) {
+  } if (action.type === FETCH_LOGOUT_ERROR) {
     return {
-      content: `Signup failed: ${action.payload}`,
+      content: `Logout failed: ${action.payload}`,
       type: 'danger',
       show: true,
     };
@@ -40,4 +40,4 @@ const signUpReducer = (state = initialState, action) => {
   return state;
 };
 
-export default signUpReducer;
+export default logOutReducer;

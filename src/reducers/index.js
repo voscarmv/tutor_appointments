@@ -6,6 +6,7 @@ import filterReducer from './filter';
 import signUpReducer from './signup';
 import logInReducer from './login';
 import authReducer from './auth';
+import logOutReducer from './logout';
 
 export default combineReducers({
   breedState: breedMenuReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
   logInState: logInReducer,
   alertState: alertReducer,
   authState: authReducer,
+  logOutState: logOutReducer,
 });

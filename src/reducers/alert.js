@@ -3,9 +3,9 @@ import {
 } from '../actions/action-types';
 
 const initialState = {
-  content: 'Hello',
-  type: 'success',
-  show: true,
+  content: '',
+  type: '',
+  show: false,
 };
 
 const alertReducer = (state = initialState, action) => {

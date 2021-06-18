@@ -1,11 +1,9 @@
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
 import propTypes from 'prop-types';
 import {
   Alert,
   Button,
 } from 'react-bootstrap';
-// import { alertMessage } from '../actions';
 
 const AlertMsg = props => {
   const {
@@ -13,7 +11,7 @@ const AlertMsg = props => {
   } = props;
   if (show) {
     return (
-      <Alert variant={type} onDismiss={handleDismiss}>
+      <Alert variant={type}>
         <p>
           {content}
         </p>
