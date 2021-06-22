@@ -146,8 +146,6 @@ export const fetchLogIn = data => async dispatch => {
       {
         method: 'POST',
         headers: {
-          'accept-encoding': 'gzip, deflate',
-          'accept-language': 'en-US,en;q=0.8',
           'content-type': 'application/json',
         },
         body: JSON.stringify(jsonUpdate),
@@ -179,33 +177,20 @@ export const fetchLogOutSuccess = () => ({ type: FETCH_LOGOUT_SUCCESS });
 export const fetchLogOutError = error => ({ type: FETCH_LOGOUT_ERROR, payload: error });
 
 export const fetchLogOut = data => async dispatch => {
+  dispatch(dismissAlert());
   dispatch(fetchLogOutRequest());
   try {
-    // const jsonUpdate = { session: { jti: '123123' } };
     console.log(data);
     const getLogout = await fetch(
       'http://localhost:3002/logout',
       {
         method: 'DELETE',
         headers: {
-          // 'accept-encoding': 'gzip, deflate',
-          // 'accept-language': 'en-US,en;q=0.8',
           'content-type': 'application/json',
           Authorization: data,
         },
-        body: JSON.stringify({ session: { jti: 'e48b1ddb-fea4-473d-9080-ea6534ae13ad' } }),
       },
     );
-    // const logoutJSON = await getLogout.json();
-    // console.log(logoutJSON);
-    // const userID = logoutJSON.id;
-    // const userEmail = logoutJSON.email;
-    // console.log(userID);
-    // const logoutJWT = getLogout.headers.get('authorization');
-    // if (logoutJWT === null) {
-    //   throw new Error('Check your username and/or password.');
-    // }
-
     if (getLogout.status !== 200) {
       throw getLogout.statusText;
     }
