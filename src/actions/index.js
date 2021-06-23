@@ -17,10 +17,14 @@ import {
   FETCH_LOGOUT_SUCCESS,
   FETCH_LOGOUT_ERROR,
   DISMISS,
+  DISMISS_SUBJECT,
   UPDATE_FILTER,
   ALERT_MESSAGE,
   AUTH_KEY,
   AUTH_CLEAR,
+  FETCH_SUBJECTS_REQUEST,
+  FETCH_SUBJECTS_SUCCESS,
+  FETCH_SUBJECTS_ERROR,
 } from './action-types';
 
 export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
@@ -199,5 +203,36 @@ export const fetchLogOut = data => async dispatch => {
   } catch (e) {
     console.log(e);
     dispatch(fetchLogOutError(e));
+  }
+};
+
+export const fetchSubjectsRequest = () => ({ type: FETCH_SUBJECTS_REQUEST });
+export const fetchSubjectsSuccess = subj => ({ type: FETCH_SUBJECTS_SUCCESS, payload: subj });
+export const fetchSubjectsError = error => ({ type: FETCH_SUBJECTS_ERROR, payload: error });
+export const dismissSubject = () => ({ type: DISMISS_SUBJECT });
+
+export const fetchSubjects = data => async dispatch => {
+  dispatch(fetchSubjectsRequest());
+  try {
+    console.log(data);
+    const getSubjects = await fetch(
+      'http://localhost:3002/subjects',
+      {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          Authorization: data,
+        },
+      },
+    );
+    if (getSubjects.status !== 200) {
+      throw getSubjects.statusText;
+    }
+    console.log(getSubjects);
+    const subj = await getSubjects.json();
+    dispatch(fetchSubjectsSuccess(subj));
+  } catch (e) {
+    console.log(e);
+    dispatch(fetchSubjectsError(e));
   }
 };

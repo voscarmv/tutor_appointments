@@ -7,11 +7,12 @@ const Home = () => (
       Tutor Appointments
       <span aria-label="cat" role="img">🐈</span>
     </h5>
-    <p>
+    <ul>
       Choose a subject and a date.
-      <Link to="/login">Log in</Link>
-      <Link to="/signup">Sign Up</Link>
-    </p>
+      <li><Link to="/login">Log in</Link></li>
+      <li><Link to="/signup">Sign Up</Link></li>
+      <li><Link to="/subjects">Subjects</Link></li>
+    </ul>
   </div>
 );
 

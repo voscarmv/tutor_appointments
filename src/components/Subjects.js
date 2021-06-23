@@ -2,13 +2,18 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { Carousel } from 'react-bootstrap';
 
-const SubjectSelector = ({ subjectsData }) => {
-  if (subjectsData.error) {
+const SubjectSelector = props => {
+  const {
+    error,
+    loading,
+    data,
+  } = props;
+  if (error) {
     return (
       <div>ERROR</div>
     );
   }
-  if (subjectsData.loading) {
+  if (loading) {
     return (
       <div>Loading...</div>
     );
@@ -16,7 +21,7 @@ const SubjectSelector = ({ subjectsData }) => {
   return (
     <Carousel>
       {
-        subjectsData.map(
+        data.map(
           s => (
             <Carousel.Item key={s.name}>
               <img
@@ -37,8 +42,9 @@ const SubjectSelector = ({ subjectsData }) => {
 };
 
 SubjectSelector.propTypes = {
-  subjectsData: propTypes.arrayOf(propTypes.any).isRequired,
-  // handleSelectChange: propTypes.func.isRequired,
+  error: propTypes.string.isRequired,
+  data: propTypes.arrayOf(propTypes.any).isRequired,
+  loading: propTypes.bool.isRequired,
 };
 
 export default SubjectSelector;

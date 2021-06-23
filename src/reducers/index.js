@@ -7,6 +7,7 @@ import signUpReducer from './signup';
 import logInReducer from './login';
 import authReducer from './auth';
 import logOutReducer from './logout';
+import subjectSelector from './subjects';
 
 export default combineReducers({
   breedState: breedMenuReducer,
@@ -17,4 +18,5 @@ export default combineReducers({
   alertState: alertReducer,
   authState: authReducer,
   logOutState: logOutReducer,
+  subjectsState: subjectSelector,
 });
