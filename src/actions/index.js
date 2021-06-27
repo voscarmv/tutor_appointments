@@ -25,6 +25,7 @@ import {
   FETCH_SUBJECTS_REQUEST,
   FETCH_SUBJECTS_SUCCESS,
   FETCH_SUBJECTS_ERROR,
+  UPDATE_SUBJECT,
 } from './action-types';
 
 export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
@@ -236,3 +237,5 @@ export const fetchSubjects = data => async dispatch => {
     dispatch(fetchSubjectsError(e));
   }
 };
+
+export const updateSubject = subject => ({ type: UPDATE_SUBJECT, payload: subject });

@@ -8,6 +8,7 @@ import logInReducer from './login';
 import authReducer from './auth';
 import logOutReducer from './logout';
 import subjectSelector from './subjects';
+import subjectDisplayReducer from './subjectdisplay';
 
 export default combineReducers({
   breedState: breedMenuReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   authState: authReducer,
   logOutState: logOutReducer,
   subjectsState: subjectSelector,
+  subjectDisplayState: subjectDisplayReducer,
 });

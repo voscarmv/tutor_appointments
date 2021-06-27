@@ -6,6 +6,7 @@ import LogInPage from './LogInPage';
 import SignUpPage from './SignUpPage';
 import Home from './Home';
 import SubjectsPage from './SubjectsPage';
+import Appointment from './Appointment';
 
 const App = () => (
   <Router>
@@ -22,6 +23,9 @@ const App = () => (
       </Route>
       <Route path="/subjects">
         <SubjectsPage />
+      </Route>
+      <Route path="/appointment">
+        <Appointment />
       </Route>
     </Switch>
   </Router>

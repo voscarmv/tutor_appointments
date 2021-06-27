@@ -1,12 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Button } from 'react-bootstrap';
 
 const SubjectSelector = props => {
   const {
     error,
     loading,
     data,
+    handleSubject,
   } = props;
   if (error) {
     return (
@@ -22,16 +23,17 @@ const SubjectSelector = props => {
     <Carousel>
       {
         data.map(
-          s => (
+          (s, i) => (
             <Carousel.Item key={s.name}>
               <img
                 alt={s.tutor}
                 src={s.tutorpic}
               />
               <Carousel.Caption>
-                <h3>{s.name}</h3>
+                <Button onClick={handleSubject} value={i}>
+                  {s.name}
+                </Button>
                 <p>{s.tutor}</p>
-                <p>{s.description}</p>
               </Carousel.Caption>
             </Carousel.Item>
           ),
@@ -45,6 +47,7 @@ SubjectSelector.propTypes = {
   error: propTypes.string.isRequired,
   data: propTypes.arrayOf(propTypes.any).isRequired,
   loading: propTypes.bool.isRequired,
+  handleSubject: propTypes.func.isRequired,
 };
 
 export default SubjectSelector;
