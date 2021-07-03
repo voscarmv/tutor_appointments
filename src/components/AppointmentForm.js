@@ -5,9 +5,10 @@ import { Dropdown, Button } from 'react-bootstrap';
 import DateTimePicker from 'react-datetime-picker';
 
 const AppointmentForm = ({
-  cities, appointmentDate, handleSelectChange, handleDateChange,
+  cities, selectedCity, appointmentDate, handleSelectChange, handleDateChange,
 }) => (
   <div>
+    {selectedCity}
     <Dropdown>
       <Dropdown.Toggle data-testid="breed_selector" variant="success" id="dropdown-basic">
         Choose
@@ -15,7 +16,7 @@ const AppointmentForm = ({
       <Dropdown.Menu>
         {cities.map(
           breed => (
-            <Dropdown.Item key={breed.id}>
+            <Dropdown.Item key={breed}>
               <Button
                 type="button"
                 classList="dropdown-item"
@@ -39,6 +40,7 @@ const AppointmentForm = ({
 
 AppointmentForm.propTypes = {
   cities: propTypes.arrayOf(propTypes.any).isRequired,
+  selectedCity: propTypes.string.isRequired,
   appointmentDate: propTypes.string.isRequired,
   handleSelectChange: propTypes.func.isRequired,
   handleDateChange: propTypes.func.isRequired,

@@ -6,6 +6,11 @@ import AppointmentForm from '../components/AppointmentForm';
 const Appointment = () => {
   const subject = useSelector(state => state.subjectDisplayState);
   const [appointmentDate, handleDateChange] = useState(new Date());
+  const [selectedCity, setCity] = useState('Paris');
+  const handleSelectChange = e => {
+    e.preventDefault();
+    setCity(e.target.value);
+  };
   if (subject.name !== '') {
     const {
       name,
@@ -24,7 +29,8 @@ const Appointment = () => {
         <AppointmentForm
           cities={['Paris', 'Tokyo', 'Moscow']}
           appointmentDate={appointmentDate}
-          handleSelectChange={() => {}}
+          selectedCity={selectedCity}
+          handleSelectChange={handleSelectChange}
           handleDateChange={handleDateChange}
         />
       </>
