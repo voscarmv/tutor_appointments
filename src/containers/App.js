@@ -7,6 +7,7 @@ import SignUpPage from './SignUpPage';
 import Home from './Home';
 import SubjectsPage from './SubjectsPage';
 import Appointment from './Appointment';
+import AppointmentIndex from './AppointmenIndex';
 
 const App = () => (
   <Router>
@@ -26,6 +27,9 @@ const App = () => (
       </Route>
       <Route path="/appointment">
         <Appointment />
+      </Route>
+      <Route path="/appointmentslist">
+        <AppointmentIndex />
       </Route>
     </Switch>
   </Router>

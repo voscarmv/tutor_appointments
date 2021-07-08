@@ -9,6 +9,7 @@ import authReducer from './auth';
 import logOutReducer from './logout';
 import subjectSelector from './subjects';
 import subjectDisplayReducer from './subjectdisplay';
+import appointmentListReducer from './appointmentlist';
 
 export default combineReducers({
   breedState: breedMenuReducer,
@@ -21,4 +22,5 @@ export default combineReducers({
   logOutState: logOutReducer,
   subjectsState: subjectSelector,
   subjectDisplayState: subjectDisplayReducer,
+  appointmentsState: appointmentListReducer,
 });

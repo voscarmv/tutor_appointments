@@ -5,7 +5,7 @@ const AppointmentList = ({ appointments }) => (
   <ul>
     {appointments.map(
       ap => (
-        <li key={ap.id}>{ap}</li>
+        <li key={ap.id}>{ap.subject.name}</li>
       ),
     )}
   </ul>
