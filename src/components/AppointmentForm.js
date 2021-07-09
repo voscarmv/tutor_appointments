@@ -5,7 +5,7 @@ import { Dropdown, Button } from 'react-bootstrap';
 import DateTimePicker from 'react-datetime-picker';
 
 const AppointmentForm = ({
-  cities, selectedCity, appointmentDate, handleSelectChange, handleDateChange,
+  cities, selectedCity, appointmentDate, handleSelectChange, handleDateChange, handleSubmit,
 }) => (
   <div>
     {selectedCity}
@@ -35,6 +35,9 @@ const AppointmentForm = ({
       onChange={handleDateChange}
       value={appointmentDate}
     />
+    <Button onClick={handleSubmit}>
+      Submit
+    </Button>
   </div>
 );
 
@@ -44,6 +47,7 @@ AppointmentForm.propTypes = {
   appointmentDate: propTypes.string.isRequired,
   handleSelectChange: propTypes.func.isRequired,
   handleDateChange: propTypes.func.isRequired,
+  handleSubmit: propTypes.func.isRequired,
 };
 
 // LogIn.propTypes = {

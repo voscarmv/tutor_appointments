@@ -27,9 +27,9 @@ const SubjectsPage = () => {
     [],
   );
   const handleSubject = e => {
-    console.log('123123123123123123');
-    console.log(e.target);
-    console.log(subjectsData.data);
+    // console.log('123123123123123123');
+    // console.log(e.target);
+    // console.log(subjectsData.data);
     history.push('/appointment');
     dispatch(updateSubject(subjectsData.data[e.target.value]));
   };

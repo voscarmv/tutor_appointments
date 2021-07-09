@@ -250,7 +250,7 @@ export const postAppointmentRequest = () => ({ type: POST_APPOINTMENT_REQUEST })
 export const postAppointmentSuccess = () => ({ type: POST_APPOINTMENT_SUCCESS });
 export const postAppointmentError = error => ({ type: POST_APPOINTMENT_ERROR, payload: error });
 
-export const postAppointment = data => async dispatch => {
+export const postAppointment = (data, key) => async dispatch => {
   dispatch(postAppointmentRequest());
   try {
     console.log(data);
@@ -262,25 +262,15 @@ export const postAppointment = data => async dispatch => {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
+          Authorization: key,
         },
         body: JSON.stringify(jsonUpdate),
       },
     );
-    const appointmentJSON = await getAppointment.json();
-    console.log(appointmentJSON);
-    const userID = appointmentJSON.id;
-    const userEmail = appointmentJSON.email;
-    console.log(userID);
-    const appointmentJWT = getAppointment.headers.get('authorization');
-    if (appointmentJWT === null) {
-      throw new Error('Check your username and/or password.');
-    }
-
     if (getAppointment.status !== 200) {
       throw getAppointment.statusText;
     }
-    dispatch(authKey({ uid: userID, email: userEmail, key: appointmentJWT }));
-    dispatch(postAppointmentSuccess(getAppointment));
+    dispatch(postAppointmentSuccess());
   } catch (e) {
     console.log(e);
     dispatch(postAppointmentError(e));
