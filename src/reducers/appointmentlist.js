@@ -2,6 +2,7 @@ import {
   FETCH_APPOINTMENT_REQUEST,
   FETCH_APPOINTMENT_SUCCESS,
   FETCH_APPOINTMENT_ERROR,
+  DISMISS_APPOINTMENT,
 } from '../actions/action-types';
 
 const initialState = {
@@ -27,6 +28,12 @@ const appointmentListReducer = (state = initialState, action) => {
       ...state,
       loading: false,
       error: action.payload,
+    };
+  } if (action.type === DISMISS_APPOINTMENT) {
+    return {
+      loading: false,
+      data: [],
+      error: '',
     };
   }
   return state;

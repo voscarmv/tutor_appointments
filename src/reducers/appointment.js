@@ -2,7 +2,7 @@ import {
   POST_APPOINTMENT_REQUEST,
   POST_APPOINTMENT_SUCCESS,
   POST_APPOINTMENT_ERROR,
-  DISMISS,
+  DISMISS_APPOINTMENT,
 } from '../actions/action-types';
 
 const initialState = {
@@ -14,17 +14,17 @@ const initialState = {
 const appointmentReducer = (state = initialState, action) => {
   if (action.type === POST_APPOINTMENT_REQUEST) {
     return {
-      content: 'Signing up...',
+      content: 'Loading appointments...',
       type: 'info',
       show: true,
     };
   } if (action.type === POST_APPOINTMENT_SUCCESS) {
     return {
-      content: 'Signed up successfully.',
+      content: 'Appointments loaded.',
       type: 'success',
       show: true,
     };
-  } if (action.type === DISMISS) {
+  } if (action.type === DISMISS_APPOINTMENT) {
     return {
       content: '',
       type: '',
@@ -32,7 +32,7 @@ const appointmentReducer = (state = initialState, action) => {
     };
   } if (action.type === POST_APPOINTMENT_ERROR) {
     return {
-      content: `Signup failed: ${action.payload}`,
+      content: `Loading appointments failed: ${action.payload}`,
       type: 'danger',
       show: true,
     };

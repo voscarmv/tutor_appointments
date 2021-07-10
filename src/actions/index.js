@@ -32,6 +32,7 @@ import {
   POST_APPOINTMENT_SUCCESS,
   POST_APPOINTMENT_ERROR,
   UPDATE_SUBJECT,
+  DISMISS_APPOINTMENT,
 } from './action-types';
 
 export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
@@ -281,6 +282,7 @@ export const postAppointment = (data, key) => async dispatch => {
 export const fetchAppointmentRequest = () => ({ type: FETCH_APPOINTMENT_REQUEST });
 export const fetchAppointmentSuccess = data => ({ type: FETCH_APPOINTMENT_SUCCESS, payload: data });
 export const fetchAppointmentError = error => ({ type: FETCH_APPOINTMENT_ERROR, payload: error });
+export const dismissAppointment = () => ({ type: DISMISS_APPOINTMENT });
 
 export const fetchAppointment = data => async dispatch => {
   dispatch(fetchAppointmentRequest());

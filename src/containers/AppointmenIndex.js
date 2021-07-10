@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import SubjectDisplay from '../components/SubjectDisplay';
 import AppointmentList from '../components/AppointmentList';
-import { fetchAppointment } from '../actions/index';
+import { fetchAppointment, dismissAppointment } from '../actions/index';
 
 const AppointmentIndex = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,11 @@ const AppointmentIndex = () => {
   useEffect(
     () => {
       dispatch(fetchAppointment(authKeyState.key));
+      return () => {
+        // eslint-disable-next-line no-console
+        console.log('Exiting appointments page');
+        dispatch(dismissAppointment());
+      };
     },
     [],
   );
