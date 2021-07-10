@@ -8,37 +8,42 @@ const Appointment = () => {
   const dispatch = useDispatch();
   const subject = useSelector(state => state.subjectDisplayState);
   const authKeyState = useSelector(state => state.authState);
-  // const [appointmentDate, handleDateChange] = useState(new Date());
-  // const [selectedCity, setCity] = useState('Paris');
-  const [newAppointment, setNewAppointment] = useState(
-    {
-      city: 'Paris',
-      date: new Date(),
-      user_id: authKeyState.uid,
-      subject_id: subject.id,
-    },
-  );
+  const [appointmentDate, handleDateChange] = useState(new Date());
+  const [selectedCity, setCity] = useState('Paris');
+  // const [newAppointment, setNewAppointment] = useState(
+  //   {
+  //     city: 'Paris',
+  //     date: appointmentDate,
+  //     user_id: authKeyState.uid,
+  //     subject_id: subject.id,
+  //   },
+  // );
   const handleSelectChange = e => {
     e.preventDefault();
-    setNewAppointment(
-      {
-        ...newAppointment,
-        city: e.target.value,
-      },
-    );
+    setCity(e.target.value);
   };
-  const handleDateChange = e => {
-    e.preventDefault();
-    setNewAppointment(
-      {
-        ...newAppointment,
-        date: e.target.value,
-      },
-    );
-  };
+  // const handleDateChange = e => {
+  //   setNewAppointment(
+  //     {
+  //       ...newAppointment,
+  //       date: e.target.value,
+  //     },
+  //   );
+  // };
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(postAppointment(newAppointment, authKeyState.key));
+    // setNewAppointment(
+    //   {
+    //     ...newAppointment,
+    //     date: appointmentDate,
+    //   },
+    // );
+    dispatch(postAppointment({
+      city: selectedCity,
+      date: appointmentDate,
+      user_id: authKeyState.uid,
+      subject_id: subject.id,
+    }, authKeyState.key));
   };
   if (subject.name !== '') {
     const {
@@ -57,8 +62,8 @@ const Appointment = () => {
         />
         <AppointmentForm
           cities={['Paris', 'Tokyo', 'Moscow']}
-          appointmentDate={newAppointment.date}
-          selectedCity={newAppointment.city}
+          appointmentDate={appointmentDate}
+          selectedCity={selectedCity}
           handleSelectChange={handleSelectChange}
           handleDateChange={handleDateChange}
           handleSubmit={handleSubmit}

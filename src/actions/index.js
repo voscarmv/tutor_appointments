@@ -267,7 +267,8 @@ export const postAppointment = (data, key) => async dispatch => {
         body: JSON.stringify(jsonUpdate),
       },
     );
-    if (getAppointment.status !== 200) {
+    if (getAppointment.status !== 201) {
+      console.log(getAppointment);
       throw getAppointment.statusText;
     }
     dispatch(postAppointmentSuccess());
