@@ -23,7 +23,7 @@ const Nav = () => {
   };
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" className="flex-column col-2">
         <Navbar.Brand>
           <span className="mr-3" aria-label="tutor" role="img">👩‍🏫</span>
           <Link to="/">Tutor appointments</Link>

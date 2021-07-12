@@ -5,3 +5,7 @@ body {
 code {
   font-family: 'Courier New', monospace;
 }
+
+#root {
+  height: 100vh;
+}

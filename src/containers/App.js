@@ -10,29 +10,35 @@ import Appointment from './Appointment';
 import AppointmentIndex from './AppointmenIndex';
 
 const App = () => (
-  <Router>
-    <Nav />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/login">
-        <LogInPage />
-      </Route>
-      <Route path="/signup">
-        <SignUpPage />
-      </Route>
-      <Route path="/subjects">
-        <SubjectsPage />
-      </Route>
-      <Route path="/appointment">
-        <Appointment />
-      </Route>
-      <Route path="/appointmentslist">
-        <AppointmentIndex />
-      </Route>
-    </Switch>
-  </Router>
+  <div className="container-fluid d-flex h-100 flex-column h-100">
+    <Router>
+      <div className="row flex-fill d-flex justify-content-start">
+        <Nav />
+        <div className="col-10 h-100">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <LogInPage />
+            </Route>
+            <Route path="/signup">
+              <SignUpPage />
+            </Route>
+            <Route path="/subjects">
+              <SubjectsPage />
+            </Route>
+            <Route path="/appointment">
+              <Appointment />
+            </Route>
+            <Route path="/appointmentslist">
+              <AppointmentIndex />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  </div>
 );
 
 export default App;

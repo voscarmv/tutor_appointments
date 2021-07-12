@@ -2,7 +2,6 @@ import {
   POST_APPOINTMENT_REQUEST,
   POST_APPOINTMENT_SUCCESS,
   POST_APPOINTMENT_ERROR,
-  DISMISS_APPOINTMENT,
 } from '../actions/action-types';
 
 const initialState = {
@@ -23,12 +22,6 @@ const appointmentReducer = (state = initialState, action) => {
       content: 'Appointments loaded.',
       type: 'success',
       show: true,
-    };
-  } if (action.type === DISMISS_APPOINTMENT) {
-    return {
-      content: '',
-      type: '',
-      show: false,
     };
   } if (action.type === POST_APPOINTMENT_ERROR) {
     return {
