@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Nav from './Nav';
+import NavB from './Nav';
 import LogInPage from './LogInPage';
 import SignUpPage from './SignUpPage';
 import Home from './Home';
@@ -13,7 +13,7 @@ const App = () => (
   <div className="container-fluid d-flex h-100 flex-column h-100">
     <Router>
       <div className="row flex-fill d-flex justify-content-start">
-        <Nav />
+        <NavB />
         <div className="col-10 h-100">
           <Switch>
             <Route exact path="/">

@@ -9,3 +9,19 @@ code {
 #root {
   height: 100vh;
 }
+
+.nav-item {
+  margin: auto;
+}
+
+/* .a-hover:hover,
+.a-hover:focus {
+  background-color: #ff0;
+  color: #ffc0cb;
+} */
+
+/* change the color of active or hovered links */
+.nav-item:hover .nav-link {
+  color: #fff;
+  background-color: #e40; /* add background-color to active links */
+}

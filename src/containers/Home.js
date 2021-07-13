@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div className="m-3">
@@ -8,11 +8,7 @@ const Home = () => (
       <span aria-label="cat" role="img">🐈</span>
     </h5>
     <ul>
-      Choose a subject and a date.
-      <li><Link to="/login">Log in</Link></li>
-      <li><Link to="/signup">Sign Up</Link></li>
-      <li><Link to="/subjects">Subjects</Link></li>
-      <li><Link to="/appointmentslist">Appointments</Link></li>
+      <li>Choose a subject and a date.</li>
     </ul>
   </div>
 );
