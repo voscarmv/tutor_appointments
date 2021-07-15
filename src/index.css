@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'vespa';
+  src: local('vespa'), url('./fonts/vespa.ttf');
+}
+
 body {
   margin: 0;
 }
@@ -39,4 +44,8 @@ code {
 
 .c-container {
   height: 500px;
+}
+
+.vespa-text {
+  font-family: vespa, Arial, Helvetica, sans-serif;
 }

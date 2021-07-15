@@ -26,7 +26,7 @@ const NavB = () => {
       <Navbar variant="dark" className="flex-column col-2">
         <Navbar.Brand>
           <span className="mr-3" aria-label="tutor" role="img">👩‍🏫</span>
-          <Link to="/">Tutor appointments</Link>
+          <Link className="vespa-text" to="/">Tutor appointments</Link>
         </Navbar.Brand>
         <Nav className="flex-column w-100">
           <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/login"><div className="link-box">Log In</div></Link></Nav.Item>
