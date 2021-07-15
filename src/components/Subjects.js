@@ -28,6 +28,7 @@ const SubjectSelector = props => {
               <img
                 alt={s.tutor}
                 src={s.tutorpic}
+                className="mockup"
               />
               <Carousel.Caption>
                 <Button onClick={handleSubject} value={i}>

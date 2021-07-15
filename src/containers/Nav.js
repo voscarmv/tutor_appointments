@@ -29,7 +29,7 @@ const NavB = () => {
           <Link to="/">Tutor appointments</Link>
         </Navbar.Brand>
         <Nav className="flex-column w-100">
-          <Nav.Item className="m-auto a-hover w-100"><Link className="nav-link text-center" to="/login">Log In</Link></Nav.Item>
+          <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/login"><div className="link-box">Log In</div></Link></Nav.Item>
           <Nav.Item className="m-auto"><Link to="/signup">Sign Up</Link></Nav.Item>
           <Nav.Item className="m-auto"><Link to="/subjects">Subjects</Link></Nav.Item>
           <Nav.Item className="m-auto"><Link to="/appointmentslist">Appointments</Link></Nav.Item>
