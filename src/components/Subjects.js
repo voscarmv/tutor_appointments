@@ -24,18 +24,20 @@ const SubjectSelector = props => {
       {
         data.map(
           (s, i) => (
-            <Carousel.Item key={s.name}>
-              <img
-                alt={s.tutor}
-                src={s.tutorpic}
-                className="mockup"
-              />
-              <Carousel.Caption>
-                <Button onClick={handleSubject} value={i}>
-                  {s.name}
-                </Button>
-                <p>{s.tutor}</p>
-              </Carousel.Caption>
+            <Carousel.Item key={s.name} className="c-container">
+              <div className="carousel-content d-flex justify-content-center align-items-center flex-column">
+                <img
+                  alt={s.tutor}
+                  src={s.tutorpic}
+                  className="mockup"
+                />
+                <Carousel.Caption>
+                  <Button onClick={handleSubject} value={i}>
+                    {s.name}
+                  </Button>
+                  <p>{s.tutor}</p>
+                </Carousel.Caption>
+              </div>
             </Carousel.Item>
           ),
         )

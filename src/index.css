@@ -32,6 +32,11 @@ code {
 }
 
 .mockup {
-  width: auto;
-  height: 30%;
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+
+.c-container {
+  height: 500px;
 }
