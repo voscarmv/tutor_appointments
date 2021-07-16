@@ -25,18 +25,25 @@ const NavB = () => {
     <>
       <Navbar variant="dark" className="flex-column col-2">
         <Navbar.Brand>
-          <span className="mr-3" aria-label="tutor" role="img">👩‍🏫</span>
-          <Link className="vespa-text" to="/">Tutor appointments</Link>
+          <Link className="vespa-text" to="/">
+            <div>
+              Tutor
+              <br />
+              appointments
+            </div>
+          </Link>
         </Navbar.Brand>
-        <Nav className="flex-column w-100">
-          <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/login"><div className="link-box">Log In</div></Link></Nav.Item>
-          <Nav.Item className="m-auto"><Link to="/signup">Sign Up</Link></Nav.Item>
-          <Nav.Item className="m-auto"><Link to="/subjects">Subjects</Link></Nav.Item>
-          <Nav.Item className="m-auto"><Link to="/appointmentslist">Appointments</Link></Nav.Item>
+        <Nav className="flex-column w-100 mt-auto mb-auto">
+          <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/subjects"><div className="link-box">SUBJECTS</div></Link></Nav.Item>
+          <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/appointmentslist"><div className="link-box">APPOINTMENTS</div></Link></Nav.Item>
+          <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/login"><div className="link-box">LOGIN</div></Link></Nav.Item>
+          <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/signup"><div className="link-box">SIGNUP</div></Link></Nav.Item>
         </Nav>
-        <div className={`container-fluid${authKeyState.uid === null ? ' d-none' : ''}`}>
-          <div className="ml-auto text-light">
-            {authKeyState.email}
+        <div className={`mt-auto${authKeyState.uid === null ? ' d-none' : ''}`}>
+          <div className="flex-column">
+            <div>
+              {authKeyState.email}
+            </div>
             <Button
               className="ml-3"
               onClick={handleLogOut}
@@ -45,13 +52,13 @@ const NavB = () => {
             </Button>
           </div>
         </div>
+        <AlertMsg
+          content={content}
+          type={type}
+          show={show}
+          handleDismiss={handleDismiss}
+        />
       </Navbar>
-      <AlertMsg
-        content={content}
-        type={type}
-        show={show}
-        handleDismiss={handleDismiss}
-      />
     </>
   );
 };

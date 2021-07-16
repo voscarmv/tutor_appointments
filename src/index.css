@@ -24,12 +24,15 @@ code {
   padding-right: 0;
   margin-top: 40px !important;
   margin-bottom: 40px !important;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .nav-item:hover,
 .nav-item:hover > a {
   color: #fff;
-  background-color: #e40;
+  background-color: #97bf10;
 }
 
 .link-box {
@@ -48,4 +51,8 @@ code {
 
 .vespa-text {
   font-family: vespa, Arial, Helvetica, sans-serif;
+  transform: rotate(-15deg);
+  display: block;
+  font-size: 30px;
+  color: black;
 }
