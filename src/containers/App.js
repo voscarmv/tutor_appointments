@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import NavB from './Nav';
 import LogInPage from './LogInPage';
 import SignUpPage from './SignUpPage';

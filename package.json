@@ -2,6 +2,7 @@
   "name": "react-redux-tutorial",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@babel/preset-env": "^7.13.9",
     "@testing-library/jest-dom": "^5.11.4",
