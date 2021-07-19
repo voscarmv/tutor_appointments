@@ -10,20 +10,22 @@ const SubjectDisplay = props => {
     tutorpic,
   } = props;
   return (
-    <Container className="m-3">
-      <Row>
-        <Col>
-          <div>{name}</div>
-          <div>{tutor}</div>
-          <div>{description}</div>
-        </Col>
-        <Col>
-          <div>
-            <img className="w-75" alt={tutor} src={tutorpic} />
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <div className="col-6">
+      <Container className="m-3">
+        <Row>
+          <Col>
+            <div>{name}</div>
+            <div>{tutor}</div>
+            <div>{description}</div>
+          </Col>
+          <Col>
+            <div>
+              <img className="w-75" alt={tutor} src={tutorpic} />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

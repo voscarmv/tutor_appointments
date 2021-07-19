@@ -7,7 +7,7 @@ import DateTimePicker from 'react-datetime-picker';
 const AppointmentForm = ({
   cities, selectedCity, appointmentDate, handleSelectChange, handleDateChange, handleSubmit,
 }) => (
-  <div>
+  <div className="col-6">
     {selectedCity}
     <Dropdown>
       <Dropdown.Toggle data-testid="breed_selector" variant="success" id="dropdown-basic">

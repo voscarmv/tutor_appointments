@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import SubjectDisplay from '../components/SubjectDisplay';
 import AppointmentForm from '../components/AppointmentForm';
 import { postAppointment } from '../actions/index';
 
 const Appointment = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const subject = useSelector(state => state.subjectDisplayState);
   const authKeyState = useSelector(state => state.authState);
@@ -43,7 +45,7 @@ const Appointment = () => {
       date: appointmentDate,
       user_id: authKeyState.uid,
       subject_id: subject.id,
-    }, authKeyState.key));
+    }, authKeyState.key, history));
   };
   if (subject.name !== '') {
     const {
@@ -53,7 +55,7 @@ const Appointment = () => {
       tutorpic,
     } = subject;
     return (
-      <>
+      <div className="container-fluid d-flex">
         <SubjectDisplay
           name={name}
           tutor={tutor}
@@ -68,7 +70,7 @@ const Appointment = () => {
           handleDateChange={handleDateChange}
           handleSubmit={handleSubmit}
         />
-      </>
+      </div>
     );
   }
   return null;
