@@ -1,10 +1,6 @@
-# Cat-alog
+# Tutor Appointments
 
-> A search engine for cat breeds online.
-
-![image](https://user-images.githubusercontent.com/2739245/112683539-55471780-8e37-11eb-8cf2-881a71ee8968.png)
-
-Check out this [short video presentation.](https://youtu.be/HQvMdBYEZQk)
+> An app to book appointment with world-renowned academic tutors.
 
 ## Built With
 
@@ -15,6 +11,8 @@ Check out this [short video presentation.](https://youtu.be/HQvMdBYEZQk)
 
 ## How to Install
 
+Before installing, you should run the [API server](https://github.com/voscarmv/tutor_api).
+
 - Clone it with `git clone` 
 - `cd` to the root directory.
 - Run `npm install`
@@ -22,7 +20,7 @@ Check out this [short video presentation.](https://youtu.be/HQvMdBYEZQk)
 - Visit `http://localhost:3000`
 
 ## Demo
-[Click here](https://cat-alog.netlify.app/) to try out the Cat-alog!
+[Click here]() to try out the App!
 
 ## Author
 
