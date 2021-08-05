@@ -1,12 +1,6 @@
 /* eslint-disable no-console */
 import fetch from 'node-fetch';
 import {
-  FETCH_BREEDS_REQUEST,
-  FETCH_BREEDS_SUCCESS,
-  FETCH_BREEDS_ERROR,
-  FETCH_CAT_REQUEST,
-  FETCH_CAT_SUCCESS,
-  FETCH_CAT_ERROR,
   FETCH_SIGNUP_REQUEST,
   FETCH_SIGNUP_SUCCESS,
   FETCH_SIGNUP_ERROR,
@@ -18,7 +12,6 @@ import {
   FETCH_LOGOUT_ERROR,
   DISMISS,
   DISMISS_SUBJECT,
-  UPDATE_FILTER,
   ALERT_MESSAGE,
   AUTH_KEY,
   AUTH_CLEAR,
@@ -38,78 +31,6 @@ import {
 export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
 export const authKey = payload => ({ type: AUTH_KEY, payload });
 export const authClear = payload => ({ type: AUTH_CLEAR, payload });
-export const updateFilter = payload => ({ type: UPDATE_FILTER, payload });
-export const fetchBreedsRequest = () => ({ type: FETCH_BREEDS_REQUEST });
-export const fetchBreedsSuccess = breeds => ({ type: FETCH_BREEDS_SUCCESS, payload: breeds });
-export const fetchBreedsError = error => ({ type: FETCH_BREEDS_ERROR, payload: error });
-export const fetchCatRequest = () => ({ type: FETCH_CAT_REQUEST });
-export const fetchCatSuccess = cat => ({ type: FETCH_CAT_SUCCESS, payload: cat });
-export const fetchCatError = error => ({ type: FETCH_CAT_ERROR, payload: error });
-export const fetchBreeds = () => async dispatch => {
-  dispatch(fetchBreedsRequest());
-  try {
-    const getBreeds = await fetch('https://api.thecatapi.com/v1/breeds');
-    const breedsJSON = await getBreeds.json();
-    dispatch(fetchBreedsSuccess(breedsJSON));
-  } catch (e) {
-    dispatch(fetchBreedsError(e));
-  }
-};
-export const fetchCat = data => async dispatch => {
-  dispatch(
-    alertMessage(
-      {
-        content: 'Signing up...',
-        type: 'info',
-        show: true,
-      },
-    ),
-  );
-  dispatch(fetchCatRequest());
-  try {
-    const jsonUpdate = { user: data };
-    console.log(JSON.stringify(jsonUpdate));
-    const getCat = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/signup',
-      {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(jsonUpdate),
-      },
-    );
-    const catJSON = await getCat.json();
-    console.log(catJSON);
-    if (catJSON.exception) {
-      throw catJSON.exception;
-    }
-    dispatch(
-      alertMessage(
-        {
-          content: 'Signed up successfully.',
-          type: 'success',
-          show: true,
-        },
-      ),
-    );
-    dispatch(fetchCatSuccess(catJSON));
-  } catch (e) {
-    console.log(e);
-    dispatch(
-      alertMessage(
-        {
-          content: `Sign-up failed: ${e}`,
-          type: 'danger',
-          show: true,
-        },
-      ),
-    );
-    dispatch(fetchCatError(e));
-  }
-};
-// BLOCC
 export const fetchSignUpRequest = () => ({ type: FETCH_SIGNUP_REQUEST });
 export const fetchSignUpSuccess = cat => ({ type: FETCH_SIGNUP_SUCCESS, payload: cat });
 export const fetchSignUpError = error => ({ type: FETCH_SIGNUP_ERROR, payload: error });
