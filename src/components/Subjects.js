@@ -35,7 +35,7 @@ const SubjectSelector = props => {
                   <Button onClick={handleSubject} value={i}>
                     {s.name}
                   </Button>
-                  <p>{s.tutor}</p>
+                  <h1 className="tutorname">{s.tutor}</h1>
                 </Carousel.Caption>
               </div>
             </Carousel.Item>
