@@ -118,7 +118,7 @@ export const fetchLogOutRequest = () => ({ type: FETCH_LOGOUT_REQUEST });
 export const fetchLogOutSuccess = () => ({ type: FETCH_LOGOUT_SUCCESS });
 export const fetchLogOutError = error => ({ type: FETCH_LOGOUT_ERROR, payload: error });
 
-export const fetchLogOut = data => async dispatch => {
+export const fetchLogOut = (data, history) => async dispatch => {
   dispatch(dismissAlert());
   dispatch(fetchLogOutRequest());
   try {
@@ -138,6 +138,7 @@ export const fetchLogOut = data => async dispatch => {
     }
     dispatch(fetchLogOutSuccess());
     dispatch(authClear());
+    history.push('/login');
   } catch (e) {
     console.log(e);
     dispatch(fetchLogOutError(e));
