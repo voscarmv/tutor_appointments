@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Container, Row } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import SubjectDisplay from '../components/SubjectDisplay';
 import AppointmentForm from '../components/AppointmentForm';
@@ -55,22 +56,24 @@ const Appointment = () => {
       tutorpic,
     } = subject;
     return (
-      <div className="container-fluid d-flex">
-        <SubjectDisplay
-          name={name}
-          tutor={tutor}
-          description={description}
-          tutorpic={tutorpic}
-        />
-        <AppointmentForm
-          cities={['Paris', 'Tokyo', 'Moscow']}
-          appointmentDate={appointmentDate}
-          selectedCity={selectedCity}
-          handleSelectChange={handleSelectChange}
-          handleDateChange={handleDateChange}
-          handleSubmit={handleSubmit}
-        />
-      </div>
+      <Container>
+        <Row>
+          <SubjectDisplay
+            name={name}
+            tutor={tutor}
+            description={description}
+            tutorpic={tutorpic}
+          />
+          <AppointmentForm
+            cities={['Paris', 'Tokyo', 'Moscow']}
+            appointmentDate={appointmentDate}
+            selectedCity={selectedCity}
+            handleSelectChange={handleSelectChange}
+            handleDateChange={handleDateChange}
+            handleSubmit={handleSubmit}
+          />
+        </Row>
+      </Container>
     );
   }
   return null;

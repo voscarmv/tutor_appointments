@@ -14,7 +14,7 @@ const App = () => (
     <Router>
       <div className="row flex-fill d-flex justify-content-start">
         <NavB />
-        <div className="col-10 h-100">
+        <div className="col-lg-10 col-12 h-100">
           <Switch>
             <Route exact path="/">
               <Home />

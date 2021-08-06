@@ -1,13 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
-// import { Form, Button } from 'react-bootstrap';
-import { Dropdown, Button } from 'react-bootstrap';
+import { Dropdown, Button, Row } from 'react-bootstrap';
 import DateTimePicker from 'react-datetime-picker';
 
 const AppointmentForm = ({
   cities, selectedCity, appointmentDate, handleSelectChange, handleDateChange, handleSubmit,
 }) => (
-  <div className="col-6">
+  <Row className="col-lg-6 col-12 flex-column">
     {selectedCity}
     <Dropdown>
       <Dropdown.Toggle data-testid="breed_selector" variant="success" id="dropdown-basic">
@@ -38,7 +37,7 @@ const AppointmentForm = ({
     <Button onClick={handleSubmit}>
       Submit
     </Button>
-  </div>
+  </Row>
 );
 
 AppointmentForm.propTypes = {

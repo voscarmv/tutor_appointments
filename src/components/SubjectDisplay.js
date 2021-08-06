@@ -10,7 +10,7 @@ const SubjectDisplay = props => {
     tutorpic,
   } = props;
   return (
-    <div className="col-6">
+    <Row className="col-lg-6 col-12">
       <Container className="m-3">
         <Row>
           <Col>
@@ -25,7 +25,7 @@ const SubjectDisplay = props => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Row>
   );
 };
 
