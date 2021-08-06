@@ -36,39 +36,11 @@ export const fetchSignUpSuccess = data => ({ type: FETCH_SIGNUP_SUCCESS, payload
 export const fetchSignUpError = error => ({ type: FETCH_SIGNUP_ERROR, payload: error });
 export const dismissAlert = () => ({ type: DISMISS });
 
-export const fetchSignUp = data => async dispatch => {
-  dispatch(fetchSignUpRequest());
-  try {
-    const jsonUpdate = { user: data };
-    console.log(JSON.stringify(jsonUpdate));
-    const getCat = await fetch(
-      'http://localhost:3002/signup',
-      {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(jsonUpdate),
-      },
-    );
-    const catJSON = await getCat.json();
-    console.log(catJSON);
-    if (catJSON.exception) {
-      throw catJSON.exception;
-    }
-    dispatch(fetchSignUpSuccess(catJSON));
-  } catch (e) {
-    console.log(e);
-    dispatch(fetchSignUpError(e));
-  }
-};
-
 export const fetchLogInRequest = () => ({ type: FETCH_LOGIN_REQUEST });
 export const fetchLogInSuccess = () => ({ type: FETCH_LOGIN_SUCCESS });
 export const fetchLogInError = error => ({ type: FETCH_LOGIN_ERROR, payload: error });
 
-export const fetchLogIn = data => async dispatch => {
+export const fetchLogIn = (data, history) => async dispatch => {
   dispatch(fetchLogInRequest());
   try {
     console.log(data);
@@ -99,9 +71,46 @@ export const fetchLogIn = data => async dispatch => {
     }
     dispatch(authKey({ uid: userID, email: userEmail, key: loginJWT }));
     dispatch(fetchLogInSuccess(getLogin));
+    history.push('/subjects');
   } catch (e) {
     console.log(e);
     dispatch(fetchLogInError(e));
+  }
+};
+
+export const fetchSignUp = (data, history) => async dispatch => {
+  dispatch(fetchSignUpRequest());
+  try {
+    const jsonUpdate = { user: data };
+    console.log(JSON.stringify(jsonUpdate));
+    const getSignUp = await fetch(
+      'http://localhost:3002/signup',
+      {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(jsonUpdate),
+      },
+    );
+    const loginJWT = getSignUp.headers.get('authorization');
+    const signupJSON = await getSignUp.json();
+    console.log(signupJSON);
+    console.log(loginJWT);
+    if (signupJSON.exception) {
+      throw signupJSON.exception;
+    }
+    dispatch(fetchSignUpSuccess(signupJSON));
+    dispatch(fetchLogIn(
+      {
+        email: data.email,
+        password: data.password,
+      }, history,
+    ));
+  } catch (e) {
+    console.log(e);
+    dispatch(fetchSignUpError(e));
   }
 };
 

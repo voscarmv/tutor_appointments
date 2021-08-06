@@ -1,11 +1,12 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSignUp, dismissAlert } from '../actions/index';
 import SignUp from '../components/SignUp';
 import AlertMsg from '../components/AlertMsg';
 
 const SignUpPage = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const alertData = useSelector(state => state.signUpState);
   const {
@@ -40,7 +41,7 @@ const SignUpPage = () => {
   };
   const handleSignUp = e => {
     e.preventDefault();
-    dispatch(fetchSignUp(credentials));
+    dispatch(fetchSignUp(credentials, history));
   };
   return (
     <div>
