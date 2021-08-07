@@ -3,26 +3,26 @@ import {
   // FETCH_SIGNUP_REQUEST,
   // FETCH_SIGNUP_SUCCESS,
   // FETCH_SIGNUP_ERROR,
-  FETCH_LOGIN_REQUEST,
-  FETCH_LOGIN_SUCCESS,
-  FETCH_LOGIN_ERROR,
-  FETCH_LOGOUT_REQUEST,
-  FETCH_LOGOUT_SUCCESS,
-  FETCH_LOGOUT_ERROR,
+  // FETCH_LOGIN_REQUEST,
+  // FETCH_LOGIN_SUCCESS,
+  // FETCH_LOGIN_ERROR,
+  // FETCH_LOGOUT_REQUEST,
+  // FETCH_LOGOUT_SUCCESS,
+  // FETCH_LOGOUT_ERROR,
   DISMISS,
   DISMISS_SUBJECT,
   ALERT_MESSAGE,
   AUTH_KEY,
   AUTH_CLEAR,
-  FETCH_SUBJECTS_REQUEST,
-  FETCH_SUBJECTS_SUCCESS,
-  FETCH_SUBJECTS_ERROR,
-  FETCH_APPOINTMENT_REQUEST,
-  FETCH_APPOINTMENT_SUCCESS,
-  FETCH_APPOINTMENT_ERROR,
-  POST_APPOINTMENT_REQUEST,
-  POST_APPOINTMENT_SUCCESS,
-  POST_APPOINTMENT_ERROR,
+  // FETCH_SUBJECTS_REQUEST,
+  // FETCH_SUBJECTS_SUCCESS,
+  // FETCH_SUBJECTS_ERROR,
+  // FETCH_APPOINTMENT_REQUEST,
+  // FETCH_APPOINTMENT_SUCCESS,
+  // FETCH_APPOINTMENT_ERROR,
+  // POST_APPOINTMENT_REQUEST,
+  // POST_APPOINTMENT_SUCCESS,
+  // POST_APPOINTMENT_ERROR,
   UPDATE_SUBJECT,
   DISMISS_APPOINTMENT,
   FETCH_REQUEST,
@@ -67,16 +67,32 @@ export const fetchSignUpSuccess = data => (fetchSuccess(data, {
   show: true,
 }));
 export const fetchSignUpError = error => (fetchError(error, {
-  content: 'Failed to sign up.',
+  content: `Failed to sign up: ${error}`,
   type: 'danger',
   show: true,
 }));
 
 export const dismissAlert = () => ({ type: DISMISS });
 
-export const fetchLogInRequest = () => ({ type: FETCH_LOGIN_REQUEST });
-export const fetchLogInSuccess = () => ({ type: FETCH_LOGIN_SUCCESS });
-export const fetchLogInError = error => ({ type: FETCH_LOGIN_ERROR, payload: error });
+// export const fetchLogInRequest = () => ({ type: FETCH_LOGIN_REQUEST });
+// export const fetchLogInSuccess = () => ({ type: FETCH_LOGIN_SUCCESS });
+// export const fetchLogInError = error => ({ type: FETCH_LOGIN_ERROR, payload: error });
+
+export const fetchLogInRequest = () => fetchRequest({
+  content: 'Logging in...',
+  type: 'info',
+  show: true,
+});
+export const fetchLogInSuccess = data => (fetchSuccess(data, {
+  content: 'Logged in successfully!',
+  type: 'success',
+  show: true,
+}));
+export const fetchLogInError = error => (fetchError(error, {
+  content: `Failed to log in: ${error}`,
+  type: 'danger',
+  show: true,
+}));
 
 export const fetchLogIn = (data, history) => async dispatch => {
   dispatch(fetchLogInRequest());
@@ -146,9 +162,25 @@ export const fetchSignUp = (data, history) => async dispatch => {
   }
 };
 
-export const fetchLogOutRequest = () => ({ type: FETCH_LOGOUT_REQUEST });
-export const fetchLogOutSuccess = () => ({ type: FETCH_LOGOUT_SUCCESS });
-export const fetchLogOutError = error => ({ type: FETCH_LOGOUT_ERROR, payload: error });
+// export const fetchLogOutRequest = () => ({ type: FETCH_LOGOUT_REQUEST });
+// export const fetchLogOutSuccess = () => ({ type: FETCH_LOGOUT_SUCCESS });
+// export const fetchLogOutError = error => ({ type: FETCH_LOGOUT_ERROR, payload: error });
+
+export const fetchLogOutRequest = () => fetchRequest({
+  content: 'Logging out...',
+  type: 'info',
+  show: true,
+});
+export const fetchLogOutSuccess = data => (fetchSuccess(data, {
+  content: 'Logged out successfully!',
+  type: 'success',
+  show: true,
+}));
+export const fetchLogOutError = error => (fetchError(error, {
+  content: `Failed to log out: ${error}`,
+  type: 'danger',
+  show: true,
+}));
 
 export const fetchLogOut = (data, history) => async dispatch => {
   dispatch(dismissAlert());
@@ -175,10 +207,26 @@ export const fetchLogOut = (data, history) => async dispatch => {
   }
 };
 
-export const fetchSubjectsRequest = () => ({ type: FETCH_SUBJECTS_REQUEST });
-export const fetchSubjectsSuccess = subj => ({ type: FETCH_SUBJECTS_SUCCESS, payload: subj });
-export const fetchSubjectsError = error => ({ type: FETCH_SUBJECTS_ERROR, payload: error });
+// export const fetchSubjectsRequest = () => ({ type: FETCH_SUBJECTS_REQUEST });
+// export const fetchSubjectsSuccess = subj => ({ type: FETCH_SUBJECTS_SUCCESS, payload: subj });
+// export const fetchSubjectsError = error => ({ type: FETCH_SUBJECTS_ERROR, payload: error });
 export const dismissSubject = () => ({ type: DISMISS_SUBJECT });
+
+export const fetchSubjectsRequest = () => fetchRequest({
+  content: 'Fetching subjects...',
+  type: 'info',
+  show: false,
+});
+export const fetchSubjectsSuccess = data => (fetchSuccess(data, {
+  content: 'Fetched subjects successfully!',
+  type: 'success',
+  show: false,
+}));
+export const fetchSubjectsError = error => (fetchError(error, {
+  content: `Failed to fetch subjects: ${error}`,
+  type: 'danger',
+  show: false,
+}));
 
 export const fetchSubjects = data => async dispatch => {
   dispatch(fetchSubjectsRequest());
@@ -206,9 +254,25 @@ export const fetchSubjects = data => async dispatch => {
 
 export const updateSubject = subject => ({ type: UPDATE_SUBJECT, payload: subject });
 
-export const postAppointmentRequest = () => ({ type: POST_APPOINTMENT_REQUEST });
-export const postAppointmentSuccess = () => ({ type: POST_APPOINTMENT_SUCCESS });
-export const postAppointmentError = error => ({ type: POST_APPOINTMENT_ERROR, payload: error });
+// export const postAppointmentRequest = () => ({ type: POST_APPOINTMENT_REQUEST });
+// export const postAppointmentSuccess = () => ({ type: POST_APPOINTMENT_SUCCESS });
+// export const postAppointmentError = error => ({ type: POST_APPOINTMENT_ERROR, payload: error });
+
+export const postAppointmentRequest = () => fetchRequest({
+  content: 'Creating appointment...',
+  type: 'info',
+  show: false,
+});
+export const postAppointmentSuccess = data => (fetchSuccess(data, {
+  content: 'Created appointment successfully!',
+  type: 'success',
+  show: false,
+}));
+export const postAppointmentError = error => (fetchError(error, {
+  content: `Failed to create appointment: ${error}`,
+  type: 'danger',
+  show: false,
+}));
 
 export const postAppointment = (data, key, history) => async dispatch => {
   dispatch(postAppointmentRequest());
@@ -236,10 +300,29 @@ export const postAppointment = (data, key, history) => async dispatch => {
   }
 };
 
-export const fetchAppointmentRequest = () => ({ type: FETCH_APPOINTMENT_REQUEST });
-export const fetchAppointmentSuccess = data => ({ type: FETCH_APPOINTMENT_SUCCESS, payload: data });
-export const fetchAppointmentError = error => ({ type: FETCH_APPOINTMENT_ERROR, payload: error });
+// export const fetchAppointmentRequest = () => ({ type: FETCH_APPOINTMENT_REQUEST });
+// export const fetchAppointmentSuccess = data => ({ type: FETCH_APPOINTMENT_SUCCESS, payload: data
+// });
+// export const fetchAppointmentError = error => ({ type: FETCH_APPOINTMENT_ERROR, payload: e
+// rror });
+
 export const dismissAppointment = () => ({ type: DISMISS_APPOINTMENT });
+
+export const fetchAppointmentRequest = () => fetchRequest({
+  content: 'Fetching appointments...',
+  type: 'info',
+  show: false,
+});
+export const fetchAppointmentSuccess = data => (fetchSuccess(data, {
+  content: 'Fetched appointments successfully!',
+  type: 'success',
+  show: false,
+}));
+export const fetchAppointmentError = error => (fetchError(error, {
+  content: `Failed to fetch appointments: ${error}`,
+  type: 'danger',
+  show: false,
+}));
 
 export const fetchAppointment = data => async dispatch => {
   dispatch(fetchAppointmentRequest());

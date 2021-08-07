@@ -7,12 +7,11 @@ import Subjects from '../components/Subjects';
 const SubjectsPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const subjectsData = useSelector(state => state.subjectsState);
+  const subjectsData = useSelector(state => state.fetchState);
   const authKeyState = useSelector(state => state.authState);
   const {
-    error,
     data,
-    loading,
+    error,
   } = subjectsData;
   useEffect(
     () => {
@@ -37,7 +36,6 @@ const SubjectsPage = () => {
       <Subjects
         error={error}
         data={data}
-        loading={loading}
         handleSubject={handleSubject}
       />
     </div>

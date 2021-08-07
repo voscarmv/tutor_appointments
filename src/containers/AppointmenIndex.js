@@ -6,7 +6,9 @@ import { fetchAppointment, dismissAppointment } from '../actions/index';
 
 const AppointmentIndex = () => {
   const dispatch = useDispatch();
-  const appointments = useSelector(state => state.appointmentsState);
+  const appointments = useSelector(state => state.fetchState);
+  // eslint-disable-next-line no-console
+  console.log(appointments.data);
   const authKeyState = useSelector(state => state.authState);
   useEffect(
     () => {

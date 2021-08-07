@@ -10,6 +10,7 @@ const initialState = {
   type: '',
   show: false,
   data: [],
+  error: null,
 };
 
 const fetchReducer = (state = initialState, action) => {
@@ -19,6 +20,7 @@ const fetchReducer = (state = initialState, action) => {
       type: action.message.type,
       show: action.message.show,
       data: [],
+      error: null,
     };
   } if (action.type === FETCH_SUCCESS) {
     return {
@@ -26,13 +28,15 @@ const fetchReducer = (state = initialState, action) => {
       type: action.message.type,
       show: action.message.show,
       data: action.payload,
+      error: null,
     };
   } if (action.type === FETCH_ERROR) {
     return {
       content: action.message.content,
       type: action.message.type,
       show: action.message.show,
-      data: action.error,
+      data: action.payload,
+      error: action.payload,
     };
   } if (action.type === DISMISS) {
     return {
@@ -40,6 +44,7 @@ const fetchReducer = (state = initialState, action) => {
       type: '',
       show: false,
       data: [],
+      error: null,
     };
   }
   return state;

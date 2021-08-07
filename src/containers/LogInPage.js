@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,7 +8,7 @@ import AlertMsg from '../components/AlertMsg';
 const LogInPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const alertData = useSelector(state => state.logInState);
+  const alertData = useSelector(state => state.fetchState);
   const {
     content,
     type,

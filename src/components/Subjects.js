@@ -5,7 +5,6 @@ import { Carousel, Button } from 'react-bootstrap';
 const SubjectSelector = props => {
   const {
     error,
-    loading,
     data,
     handleSubject,
   } = props;
@@ -14,10 +13,8 @@ const SubjectSelector = props => {
       <div>ERROR</div>
     );
   }
-  if (loading) {
-    return (
-      <div>Loading...</div>
-    );
+  if (!data.map) {
+    return null;
   }
   return (
     <Carousel>
@@ -49,7 +46,6 @@ const SubjectSelector = props => {
 SubjectSelector.propTypes = {
   error: propTypes.string.isRequired,
   data: propTypes.arrayOf(propTypes.any).isRequired,
-  loading: propTypes.bool.isRequired,
   handleSubject: propTypes.func.isRequired,
 };
 
