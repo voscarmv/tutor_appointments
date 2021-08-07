@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,10 +16,8 @@ const SubjectsPage = () => {
   } = subjectsData;
   useEffect(
     () => {
-      console.log('Entering subjects page');
       dispatch(fetchSubjects(authKeyState.key));
       return () => {
-        console.log('Exiting subjects page');
         dispatch(dismissSubject());
       };
     },
@@ -32,6 +29,8 @@ const SubjectsPage = () => {
   };
   return (
     <div>
+      <h1>Choose a subject</h1>
+      <p>Click on the button with the name of the subject you wish to schedule for tutorial.</p>
       <Subjects
         error={error}
         data={data}

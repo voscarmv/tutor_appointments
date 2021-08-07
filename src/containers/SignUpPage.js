@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSignUp, dismissAlert } from '../actions/index';
@@ -17,6 +17,10 @@ const SignUpPage = () => {
   const handleDismiss = () => {
     dispatch(dismissAlert());
   };
+  useEffect(
+    () => handleDismiss,
+    [],
+  );
   const [credentials, setCredentials] = useState(
     {
       email: '',
@@ -51,6 +55,7 @@ const SignUpPage = () => {
         show={show}
         handleDismiss={handleDismiss}
       />
+      <h1>Sign up</h1>
       <SignUp
         handleSignUp={handleSignUp}
         handleUserChange={handleUserChange}

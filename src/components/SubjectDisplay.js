@@ -14,8 +14,8 @@ const SubjectDisplay = props => {
       <Container className="m-3">
         <Row>
           <Col>
-            <div>{name}</div>
-            <div>{tutor}</div>
+            <h1>{name}</h1>
+            <h2>{tutor}</h2>
             <div>{description}</div>
           </Col>
           <Col>

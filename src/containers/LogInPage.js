@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchLogIn, dismissAlert } from '../actions/index';
@@ -18,6 +18,10 @@ const LogInPage = () => {
   const handleDismiss = () => {
     dispatch(dismissAlert());
   };
+  useEffect(
+    () => handleDismiss,
+    [],
+  );
   const [credentials, setCredentials] = useState(
     {
       email: '',
@@ -52,6 +56,7 @@ const LogInPage = () => {
         show={show}
         handleDismiss={handleDismiss}
       />
+      <h1>Log in</h1>
       <LogIn
         handleLogIn={handleLogIn}
         handleUserChange={handleUserChange}

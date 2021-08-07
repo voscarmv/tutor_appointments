@@ -13,34 +13,12 @@ const Appointment = () => {
   const authKeyState = useSelector(state => state.authState);
   const [appointmentDate, handleDateChange] = useState(new Date());
   const [selectedCity, setCity] = useState('Paris');
-  // const [newAppointment, setNewAppointment] = useState(
-  //   {
-  //     city: 'Paris',
-  //     date: appointmentDate,
-  //     user_id: authKeyState.uid,
-  //     subject_id: subject.id,
-  //   },
-  // );
   const handleSelectChange = e => {
     e.preventDefault();
     setCity(e.target.value);
   };
-  // const handleDateChange = e => {
-  //   setNewAppointment(
-  //     {
-  //       ...newAppointment,
-  //       date: e.target.value,
-  //     },
-  //   );
-  // };
   const handleSubmit = e => {
     e.preventDefault();
-    // setNewAppointment(
-    //   {
-    //     ...newAppointment,
-    //     date: appointmentDate,
-    //   },
-    // );
     dispatch(postAppointment({
       city: selectedCity,
       date: appointmentDate,
@@ -57,6 +35,7 @@ const Appointment = () => {
     } = subject;
     return (
       <Container>
+        <h1>Book an appointment</h1>
         <Row>
           <SubjectDisplay
             name={name}

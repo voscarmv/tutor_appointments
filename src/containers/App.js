@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import NavB from './Nav';

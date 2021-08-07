@@ -7,10 +7,9 @@ const AppointmentForm = ({
   cities, selectedCity, appointmentDate, handleSelectChange, handleDateChange, handleSubmit,
 }) => (
   <Row className="col-lg-6 col-12 flex-column">
-    {selectedCity}
     <Dropdown>
       <Dropdown.Toggle data-testid="breed_selector" variant="success" id="dropdown-basic">
-        Choose
+        Choose a location
       </Dropdown.Toggle>
       <Dropdown.Menu>
         {cities.map(
@@ -30,6 +29,8 @@ const AppointmentForm = ({
         )}
       </Dropdown.Menu>
     </Dropdown>
+    <span>{`Appointment location: ${selectedCity}`}</span>
+    <span>Date and time:</span>
     <DateTimePicker
       onChange={handleDateChange}
       value={appointmentDate}
@@ -43,16 +44,10 @@ const AppointmentForm = ({
 AppointmentForm.propTypes = {
   cities: propTypes.arrayOf(propTypes.any).isRequired,
   selectedCity: propTypes.string.isRequired,
-  appointmentDate: propTypes.string.isRequired,
+  appointmentDate: propTypes.instanceOf(Date).isRequired,
   handleSelectChange: propTypes.func.isRequired,
   handleDateChange: propTypes.func.isRequired,
   handleSubmit: propTypes.func.isRequired,
 };
-
-// LogIn.propTypes = {
-//   handleUserChange: propTypes.func.isRequired,
-//   handlePasswordChange: propTypes.func.isRequired,
-//   handleSignUp: propTypes.func.isRequired,
-// };
 
 export default AppointmentForm;

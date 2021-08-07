@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import fetch from 'node-fetch';
 import {
   FETCH_SIGNUP_REQUEST,
@@ -43,9 +42,7 @@ export const fetchLogInError = error => ({ type: FETCH_LOGIN_ERROR, payload: err
 export const fetchLogIn = (data, history) => async dispatch => {
   dispatch(fetchLogInRequest());
   try {
-    console.log(data);
     const jsonUpdate = { user: data };
-    console.log(JSON.stringify(jsonUpdate));
     const getLogin = await fetch(
       'http://localhost:3002/login',
       {
@@ -57,10 +54,10 @@ export const fetchLogIn = (data, history) => async dispatch => {
       },
     );
     const loginJSON = await getLogin.json();
-    console.log(loginJSON);
+
     const userID = loginJSON.id;
     const userEmail = loginJSON.email;
-    console.log(userID);
+
     const loginJWT = getLogin.headers.get('authorization');
     if (loginJWT === null) {
       throw new Error('Check your username and/or password.');
@@ -73,7 +70,6 @@ export const fetchLogIn = (data, history) => async dispatch => {
     dispatch(fetchLogInSuccess(getLogin));
     history.push('/subjects');
   } catch (e) {
-    console.log(e);
     dispatch(fetchLogInError(e));
   }
 };
@@ -82,7 +78,7 @@ export const fetchSignUp = (data, history) => async dispatch => {
   dispatch(fetchSignUpRequest());
   try {
     const jsonUpdate = { user: data };
-    console.log(JSON.stringify(jsonUpdate));
+
     const getSignUp = await fetch(
       'http://localhost:3002/signup',
       {
@@ -94,10 +90,8 @@ export const fetchSignUp = (data, history) => async dispatch => {
         body: JSON.stringify(jsonUpdate),
       },
     );
-    const loginJWT = getSignUp.headers.get('authorization');
     const signupJSON = await getSignUp.json();
-    console.log(signupJSON);
-    console.log(loginJWT);
+
     if (signupJSON.exception) {
       throw signupJSON.exception;
     }
@@ -109,7 +103,6 @@ export const fetchSignUp = (data, history) => async dispatch => {
       }, history,
     ));
   } catch (e) {
-    console.log(e);
     dispatch(fetchSignUpError(e));
   }
 };
@@ -122,7 +115,6 @@ export const fetchLogOut = (data, history) => async dispatch => {
   dispatch(dismissAlert());
   dispatch(fetchLogOutRequest());
   try {
-    console.log(data);
     const getLogout = await fetch(
       'http://localhost:3002/logout',
       {
@@ -140,7 +132,6 @@ export const fetchLogOut = (data, history) => async dispatch => {
     dispatch(authClear());
     history.push('/login');
   } catch (e) {
-    console.log(e);
     dispatch(fetchLogOutError(e));
   }
 };
@@ -153,7 +144,6 @@ export const dismissSubject = () => ({ type: DISMISS_SUBJECT });
 export const fetchSubjects = data => async dispatch => {
   dispatch(fetchSubjectsRequest());
   try {
-    console.log(data);
     const getSubjects = await fetch(
       'http://localhost:3002/subjects',
       {
@@ -167,11 +157,10 @@ export const fetchSubjects = data => async dispatch => {
     if (getSubjects.status !== 200) {
       throw getSubjects.statusText;
     }
-    console.log(getSubjects);
+
     const subj = await getSubjects.json();
     dispatch(fetchSubjectsSuccess(subj));
   } catch (e) {
-    console.log(e);
     dispatch(fetchSubjectsError(e));
   }
 };
@@ -185,9 +174,8 @@ export const postAppointmentError = error => ({ type: POST_APPOINTMENT_ERROR, pa
 export const postAppointment = (data, key, history) => async dispatch => {
   dispatch(postAppointmentRequest());
   try {
-    console.log(data);
     const jsonUpdate = { appointment: data };
-    console.log(JSON.stringify(jsonUpdate));
+
     const getAppointment = await fetch(
       'http://localhost:3002/appointments',
       {
@@ -200,13 +188,11 @@ export const postAppointment = (data, key, history) => async dispatch => {
       },
     );
     if (getAppointment.status !== 201) {
-      console.log(getAppointment);
       throw getAppointment.statusText;
     }
     dispatch(postAppointmentSuccess());
     history.push('/appointmentslist');
   } catch (e) {
-    console.log(e);
     dispatch(postAppointmentError(e));
   }
 };
@@ -219,9 +205,6 @@ export const dismissAppointment = () => ({ type: DISMISS_APPOINTMENT });
 export const fetchAppointment = data => async dispatch => {
   dispatch(fetchAppointmentRequest());
   try {
-    console.log(data);
-    const jsonUpdate = { appointment: data };
-    console.log(JSON.stringify(jsonUpdate));
     const getAppointment = await fetch(
       'http://localhost:3002/appointments',
       {
@@ -240,7 +223,6 @@ export const fetchAppointment = data => async dispatch => {
     const appointmentJSON = await getAppointment.json();
     dispatch(fetchAppointmentSuccess(appointmentJSON));
   } catch (e) {
-    console.log(e);
     dispatch(fetchAppointmentError(e));
   }
 };
