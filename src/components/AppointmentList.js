@@ -2,6 +2,9 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const AppointmentList = ({ appointments }) => {
+  if (!appointments) {
+    return null;
+  }
   if (!appointments[0]) {
     return null;
   }
