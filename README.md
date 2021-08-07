@@ -20,7 +20,7 @@ Before installing, you should run the [API server](https://github.com/voscarmv/t
 - Visit `http://localhost:3000`
 
 ## Demo
-[Click here](https://60f6062426d78d008ee480ef--pensive-leavitt-100e0b.netlify.app/) to try out the App!
+[Click here](https://610dfffcb5095f00070f3ab3--pensive-leavitt-100e0b.netlify.app/) to try out the App!
 
 ## Author
 
