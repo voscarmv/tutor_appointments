@@ -8,6 +8,7 @@ import subjectSelector from './subjects';
 import subjectDisplayReducer from './subjectdisplay';
 import appointmentListReducer from './appointmentlist';
 import appointmentReducer from './appointment';
+import fetchReducer from './rfetch';
 
 export default combineReducers({
   signUpState: signUpReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   subjectDisplayState: subjectDisplayReducer,
   appointmentsState: appointmentListReducer,
   postAppointmentState: appointmentReducer,
+  fetchState: fetchReducer,
 });

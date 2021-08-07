@@ -8,7 +8,7 @@ import AlertMsg from '../components/AlertMsg';
 const SignUpPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const alertData = useSelector(state => state.signUpState);
+  const alertData = useSelector(state => state.fetchState);
   const {
     content,
     type,
@@ -18,7 +18,7 @@ const SignUpPage = () => {
     dispatch(dismissAlert());
   };
   useEffect(
-    () => handleDismiss,
+    () => handleDismiss(),
     [],
   );
   const [credentials, setCredentials] = useState(

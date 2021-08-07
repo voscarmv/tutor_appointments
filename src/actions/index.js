@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 import {
-  FETCH_SIGNUP_REQUEST,
-  FETCH_SIGNUP_SUCCESS,
-  FETCH_SIGNUP_ERROR,
+  // FETCH_SIGNUP_REQUEST,
+  // FETCH_SIGNUP_SUCCESS,
+  // FETCH_SIGNUP_ERROR,
   FETCH_LOGIN_REQUEST,
   FETCH_LOGIN_SUCCESS,
   FETCH_LOGIN_ERROR,
@@ -25,14 +25,53 @@ import {
   POST_APPOINTMENT_ERROR,
   UPDATE_SUBJECT,
   DISMISS_APPOINTMENT,
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_ERROR,
 } from './action-types';
 
 export const alertMessage = payload => ({ type: ALERT_MESSAGE, payload });
 export const authKey = payload => ({ type: AUTH_KEY, payload });
 export const authClear = payload => ({ type: AUTH_CLEAR, payload });
-export const fetchSignUpRequest = () => ({ type: FETCH_SIGNUP_REQUEST });
-export const fetchSignUpSuccess = data => ({ type: FETCH_SIGNUP_SUCCESS, payload: data });
-export const fetchSignUpError = error => ({ type: FETCH_SIGNUP_ERROR, payload: error });
+
+export const fetchRequest = message => ({
+  type: FETCH_REQUEST,
+  message,
+});
+
+export const fetchSuccess = (data, message) => ({
+  type: FETCH_SUCCESS,
+  payload: data,
+  message,
+});
+
+export const fetchError = (error, message) => ({
+  type: FETCH_ERROR,
+  payload: error,
+  message,
+});
+
+// export const fetchSignUpRequest = () => ({ type: FETCH_SIGNUP_REQUEST });
+// export const fetchSignUpSuccess = data => ({ type: FETCH_SIGNUP_SUCCESS, payload: data });
+// export const fetchSignUpError = error => ({ type: FETCH_SIGNUP_ERROR, payload: error });
+// export const dismissAlert = () => ({ type: DISMISS });
+
+export const fetchSignUpRequest = () => fetchRequest({
+  content: 'Signing up...',
+  type: 'info',
+  show: true,
+});
+export const fetchSignUpSuccess = data => (fetchSuccess(data, {
+  content: 'Signed up successfully!',
+  type: 'success',
+  show: true,
+}));
+export const fetchSignUpError = error => (fetchError(error, {
+  content: 'Failed to sign up.',
+  type: 'danger',
+  show: true,
+}));
+
 export const dismissAlert = () => ({ type: DISMISS });
 
 export const fetchLogInRequest = () => ({ type: FETCH_LOGIN_REQUEST });

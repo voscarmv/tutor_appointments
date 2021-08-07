@@ -20,7 +20,7 @@ const AppointmentIndex = () => {
   return (
     <div>
       <h1>Booked appointments</h1>
-      <p><Link to="/subjects">Click here to book a new appointmnet</Link></p>
+      <p><Link to="/subjects">Click here to book a new appointment</Link></p>
       <p>This is a list of your booked appointments:</p>
       <AppointmentList appointments={appointments.data} />
     </div>

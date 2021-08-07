@@ -30,7 +30,10 @@ const SubjectsPage = () => {
   return (
     <div>
       <h1>Choose a subject</h1>
-      <p>Click on the button with the name of the subject you wish to schedule for tutorial.</p>
+      <p>
+        Click on the button with the name of the subject you
+        wish to schedule for tutorial. Click on the side arrows to browse subjects.
+      </p>
       <Subjects
         error={error}
         data={data}
