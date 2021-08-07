@@ -1,28 +1,10 @@
 import fetch from 'node-fetch';
 import {
-  // FETCH_SIGNUP_REQUEST,
-  // FETCH_SIGNUP_SUCCESS,
-  // FETCH_SIGNUP_ERROR,
-  // FETCH_LOGIN_REQUEST,
-  // FETCH_LOGIN_SUCCESS,
-  // FETCH_LOGIN_ERROR,
-  // FETCH_LOGOUT_REQUEST,
-  // FETCH_LOGOUT_SUCCESS,
-  // FETCH_LOGOUT_ERROR,
   DISMISS,
   DISMISS_SUBJECT,
   ALERT_MESSAGE,
   AUTH_KEY,
   AUTH_CLEAR,
-  // FETCH_SUBJECTS_REQUEST,
-  // FETCH_SUBJECTS_SUCCESS,
-  // FETCH_SUBJECTS_ERROR,
-  // FETCH_APPOINTMENT_REQUEST,
-  // FETCH_APPOINTMENT_SUCCESS,
-  // FETCH_APPOINTMENT_ERROR,
-  // POST_APPOINTMENT_REQUEST,
-  // POST_APPOINTMENT_SUCCESS,
-  // POST_APPOINTMENT_ERROR,
   UPDATE_SUBJECT,
   DISMISS_APPOINTMENT,
   FETCH_REQUEST,
@@ -51,11 +33,6 @@ export const fetchError = (error, message) => ({
   message,
 });
 
-// export const fetchSignUpRequest = () => ({ type: FETCH_SIGNUP_REQUEST });
-// export const fetchSignUpSuccess = data => ({ type: FETCH_SIGNUP_SUCCESS, payload: data });
-// export const fetchSignUpError = error => ({ type: FETCH_SIGNUP_ERROR, payload: error });
-// export const dismissAlert = () => ({ type: DISMISS });
-
 export const fetchSignUpRequest = () => fetchRequest({
   content: 'Signing up...',
   type: 'info',
@@ -73,10 +50,6 @@ export const fetchSignUpError = error => (fetchError(error, {
 }));
 
 export const dismissAlert = () => ({ type: DISMISS });
-
-// export const fetchLogInRequest = () => ({ type: FETCH_LOGIN_REQUEST });
-// export const fetchLogInSuccess = () => ({ type: FETCH_LOGIN_SUCCESS });
-// export const fetchLogInError = error => ({ type: FETCH_LOGIN_ERROR, payload: error });
 
 export const fetchLogInRequest = () => fetchRequest({
   content: 'Logging in...',
@@ -99,7 +72,7 @@ export const fetchLogIn = (data, history) => async dispatch => {
   try {
     const jsonUpdate = { user: data };
     const getLogin = await fetch(
-      'http://localhost:3002/login',
+      'https://thawing-beyond-27762.herokuapp.com/login',
       {
         method: 'POST',
         headers: {
@@ -135,7 +108,7 @@ export const fetchSignUp = (data, history) => async dispatch => {
     const jsonUpdate = { user: data };
 
     const getSignUp = await fetch(
-      'http://localhost:3002/signup',
+      'https://thawing-beyond-27762.herokuapp.com/signup',
       {
         method: 'POST',
         mode: 'cors',
@@ -162,10 +135,6 @@ export const fetchSignUp = (data, history) => async dispatch => {
   }
 };
 
-// export const fetchLogOutRequest = () => ({ type: FETCH_LOGOUT_REQUEST });
-// export const fetchLogOutSuccess = () => ({ type: FETCH_LOGOUT_SUCCESS });
-// export const fetchLogOutError = error => ({ type: FETCH_LOGOUT_ERROR, payload: error });
-
 export const fetchLogOutRequest = () => fetchRequest({
   content: 'Logging out...',
   type: 'info',
@@ -187,7 +156,7 @@ export const fetchLogOut = (data, history) => async dispatch => {
   dispatch(fetchLogOutRequest());
   try {
     const getLogout = await fetch(
-      'http://localhost:3002/logout',
+      'https://thawing-beyond-27762.herokuapp.com/logout',
       {
         method: 'DELETE',
         headers: {
@@ -207,9 +176,6 @@ export const fetchLogOut = (data, history) => async dispatch => {
   }
 };
 
-// export const fetchSubjectsRequest = () => ({ type: FETCH_SUBJECTS_REQUEST });
-// export const fetchSubjectsSuccess = subj => ({ type: FETCH_SUBJECTS_SUCCESS, payload: subj });
-// export const fetchSubjectsError = error => ({ type: FETCH_SUBJECTS_ERROR, payload: error });
 export const dismissSubject = () => ({ type: DISMISS_SUBJECT });
 
 export const fetchSubjectsRequest = () => fetchRequest({
@@ -232,7 +198,7 @@ export const fetchSubjects = data => async dispatch => {
   dispatch(fetchSubjectsRequest());
   try {
     const getSubjects = await fetch(
-      'http://localhost:3002/subjects',
+      'https://thawing-beyond-27762.herokuapp.com/subjects',
       {
         method: 'GET',
         headers: {
@@ -253,10 +219,6 @@ export const fetchSubjects = data => async dispatch => {
 };
 
 export const updateSubject = subject => ({ type: UPDATE_SUBJECT, payload: subject });
-
-// export const postAppointmentRequest = () => ({ type: POST_APPOINTMENT_REQUEST });
-// export const postAppointmentSuccess = () => ({ type: POST_APPOINTMENT_SUCCESS });
-// export const postAppointmentError = error => ({ type: POST_APPOINTMENT_ERROR, payload: error });
 
 export const postAppointmentRequest = () => fetchRequest({
   content: 'Creating appointment...',
@@ -280,7 +242,7 @@ export const postAppointment = (data, key, history) => async dispatch => {
     const jsonUpdate = { appointment: data };
 
     const getAppointment = await fetch(
-      'http://localhost:3002/appointments',
+      'https://thawing-beyond-27762.herokuapp.com/appointments',
       {
         method: 'POST',
         headers: {
@@ -299,12 +261,6 @@ export const postAppointment = (data, key, history) => async dispatch => {
     dispatch(postAppointmentError(e));
   }
 };
-
-// export const fetchAppointmentRequest = () => ({ type: FETCH_APPOINTMENT_REQUEST });
-// export const fetchAppointmentSuccess = data => ({ type: FETCH_APPOINTMENT_SUCCESS, payload: data
-// });
-// export const fetchAppointmentError = error => ({ type: FETCH_APPOINTMENT_ERROR, payload: e
-// rror });
 
 export const dismissAppointment = () => ({ type: DISMISS_APPOINTMENT });
 
@@ -328,7 +284,7 @@ export const fetchAppointment = data => async dispatch => {
   dispatch(fetchAppointmentRequest());
   try {
     const getAppointment = await fetch(
-      'http://localhost:3002/appointments',
+      'https://thawing-beyond-27762.herokuapp.com/appointments',
       {
         method: 'GET',
         headers: {
