@@ -13,6 +13,9 @@ const SubjectSelector = props => {
       <div>ERROR</div>
     );
   }
+  if (!data) {
+    return null;
+  }
   if (!data.map) {
     return null;
   }

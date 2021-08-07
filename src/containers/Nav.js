@@ -24,10 +24,9 @@ const NavB = () => {
             </div>
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="flex-column">
-            <Nav className="flex-column w-100 mt-auto mb-auto">
+            <Nav className="flex-column mt-auto mb-auto">
               <Nav.Item className={`m-auto a-hover w-100 text-center${authKeyState.uid === null ? ' d-none' : ''}`}><Link className="nav-link-custom" to="/subjects"><div className="link-box">SUBJECTS</div></Link></Nav.Item>
               <Nav.Item className={`m-auto a-hover w-100 text-center${authKeyState.uid === null ? ' d-none' : ''}`}><Link className="nav-link-custom" to="/appointmentslist"><div className="link-box">APPOINTMENTS</div></Link></Nav.Item>
               <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/login"><div className="link-box">LOGIN</div></Link></Nav.Item>
@@ -47,6 +46,7 @@ const NavB = () => {
             </div>
           </div>
         </Navbar.Collapse>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       </Navbar>
     </>
   );
