@@ -70,7 +70,7 @@ export const fetchLogInError = error => (fetchError(error, {
 export const fetchLogIn = (data, history) => async dispatch => {
   dispatch(fetchLogInRequest());
   try {
-    const jsonUpdate = { user: data };
+    const jsonUpdate = data;
     const getLogin = await fetch(
       'http://localhost:3002/login',
       {
@@ -85,8 +85,7 @@ export const fetchLogIn = (data, history) => async dispatch => {
 
     const userID = loginJSON.id;
     const userEmail = loginJSON.email;
-
-    const loginJWT = getLogin.headers.get('authorization');
+    const loginJWT = loginJSON.key;
     if (loginJWT === null) {
       throw new Error('Check your username and/or password.');
     }
@@ -105,7 +104,7 @@ export const fetchLogIn = (data, history) => async dispatch => {
 export const fetchSignUp = (data, history) => async dispatch => {
   dispatch(fetchSignUpRequest());
   try {
-    const jsonUpdate = { user: data };
+    const jsonUpdate = data;
 
     const getSignUp = await fetch(
       'http://localhost:3002/signup',
