@@ -7,7 +7,6 @@ import store from '../store/index';
 import App from '../containers/App';
 import 'regenerator-runtime/runtime';
 import * as actions from '../actions/index';
-import cat from './CatResponse';
 
 jest.mock('../actions/index');
 
@@ -25,7 +24,7 @@ describe('App', () => {
       }),
     );
     actions.dismissAlert.mockImplementation(
-      () => ({ type: 'FETCH_CAT_SUCCESS', payload: cat }),
+      () => ({ type: 'DISMISS' }),
     );
   });
   afterEach(() => {
