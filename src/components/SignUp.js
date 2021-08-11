@@ -13,7 +13,7 @@ const LogIn = ({ handleSignUp, handleUserChange, handlePasswordChange }) => (
     </Form.Group>
     <Form.Group controlId="formBasicPassword">
       <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" onChange={handlePasswordChange} />
+      <Form.Control type="password" placeholder="Password" minlength="8" onChange={handlePasswordChange} />
     </Form.Group>
     <Button variant="primary" type="submit">
       Sign up
