@@ -21,31 +21,17 @@ const SignUpPage = () => {
     () => handleDismiss(),
     [],
   );
-  const [credentials, setCredentials] = useState(
-    {
-      email: '',
-      password: '',
-    },
-  );
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const handleUserChange = e => {
-    setCredentials(
-      {
-        ...credentials,
-        email: e.target.value,
-      },
-    );
+    setEmail(e.target.value);
   };
   const handlePasswordChange = e => {
-    setCredentials(
-      {
-        ...credentials,
-        password: e.target.value,
-      },
-    );
+    setPassword(e.target.value);
   };
   const handleSignUp = e => {
     e.preventDefault();
-    dispatch(fetchSignUp(credentials, history));
+    dispatch(fetchSignUp({ email, password }, history));
   };
   return (
     <div>
