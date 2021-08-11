@@ -1,1709 +1,200 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders Cat component 1`] = `
+exports[`App Successful signup 1`] = `
 <DocumentFragment>
-  <nav
-    class="navbar navbar-expand navbar-dark bg-dark"
+  <div
+    class="container-fluid d-flex h-100 flex-column h-100"
   >
-    <span
-      class="navbar-brand"
-    >
-      <span
-        aria-label="cat"
-        role="img"
-      >
-        😺
-      </span>
-      <a
-        href="/"
-      >
-        The Cat-alog
-      </a>
-    </span>
     <div
-      class="container-fluid"
+      class="row flex-fill d-flex justify-content-start"
     >
-      <div
-        class="ml-auto text-light"
+      <nav
+        class="flex-column col-lg-2 col-12 navbar navbar-expand-lg navbar-light"
       >
-        Show breed:
-      </div>
-      <div
-        class="p-3"
-      >
-        <div
-          class="dropdown"
+        <span
+          class="navbar-brand"
         >
-          <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="dropdown-toggle btn btn-success"
-            data-testid="breed_selector"
-            id="dropdown-basic"
-            type="button"
+          <a
+            class="vespa-text"
+            href="#/"
           >
-            Choose
-          </button>
+            <div>
+              Tutor
+              <br />
+              appointments
+            </div>
+          </a>
+        </span>
+        <div
+          class="navbar-collapse collapse"
+          id="responsive-navbar-nav"
+        >
           <div
-            aria-labelledby="dropdown-basic"
-            class="dropdown-menu"
-            style="margin: 0px;"
+            class="flex-column"
           >
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="abys"
-                type="button"
-                value="abys"
-              >
-                Abyssinian
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="aege"
-                type="button"
-                value="aege"
-              >
-                Aegean
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="abob"
-                type="button"
-                value="abob"
-              >
-                American Bobtail
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="acur"
-                type="button"
-                value="acur"
-              >
-                American Curl
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="asho"
-                type="button"
-                value="asho"
-              >
-                American Shorthair
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="awir"
-                type="button"
-                value="awir"
-              >
-                American Wirehair
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="amau"
-                type="button"
-                value="amau"
-              >
-                Arabian Mau
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="amis"
-                type="button"
-                value="amis"
-              >
-                Australian Mist
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="bali"
-                type="button"
-                value="bali"
-              >
-                Balinese
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="bamb"
-                type="button"
-                value="bamb"
-              >
-                Bambino
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="beng"
-                type="button"
-                value="beng"
-              >
-                Bengal
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="birm"
-                type="button"
-                value="birm"
-              >
-                Birman
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="bomb"
-                type="button"
-                value="bomb"
-              >
-                Bombay
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="bslo"
-                type="button"
-                value="bslo"
-              >
-                British Longhair
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="bsho"
-                type="button"
-                value="bsho"
-              >
-                British Shorthair
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="bure"
-                type="button"
-                value="bure"
-              >
-                Burmese
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="buri"
-                type="button"
-                value="buri"
-              >
-                Burmilla
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="cspa"
-                type="button"
-                value="cspa"
-              >
-                California Spangled
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="ctif"
-                type="button"
-                value="ctif"
-              >
-                Chantilly-Tiffany
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="char"
-                type="button"
-                value="char"
-              >
-                Chartreux
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="chau"
-                type="button"
-                value="chau"
-              >
-                Chausie
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="chee"
-                type="button"
-                value="chee"
-              >
-                Cheetoh
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="csho"
-                type="button"
-                value="csho"
-              >
-                Colorpoint Shorthair
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="crex"
-                type="button"
-                value="crex"
-              >
-                Cornish Rex
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="cymr"
-                type="button"
-                value="cymr"
-              >
-                Cymric
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="cypr"
-                type="button"
-                value="cypr"
-              >
-                Cyprus
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="drex"
-                type="button"
-                value="drex"
-              >
-                Devon Rex
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="dons"
-                type="button"
-                value="dons"
-              >
-                Donskoy
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="lihu"
-                type="button"
-                value="lihu"
-              >
-                Dragon Li
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="emau"
-                type="button"
-                value="emau"
-              >
-                Egyptian Mau
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="ebur"
-                type="button"
-                value="ebur"
-              >
-                European Burmese
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="esho"
-                type="button"
-                value="esho"
-              >
-                Exotic Shorthair
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="hbro"
-                type="button"
-                value="hbro"
-              >
-                Havana Brown
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="hima"
-                type="button"
-                value="hima"
-              >
-                Himalayan
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="jbob"
-                type="button"
-                value="jbob"
-              >
-                Japanese Bobtail
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="java"
-                type="button"
-                value="java"
-              >
-                Javanese
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="khao"
-                type="button"
-                value="khao"
-              >
-                Khao Manee
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="kora"
-                type="button"
-                value="kora"
-              >
-                Korat
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="kuri"
-                type="button"
-                value="kuri"
-              >
-                Kurilian
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="lape"
-                type="button"
-                value="lape"
-              >
-                LaPerm
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="mcoo"
-                type="button"
-                value="mcoo"
-              >
-                Maine Coon
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="mala"
-                type="button"
-                value="mala"
-              >
-                Malayan
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="manx"
-                type="button"
-                value="manx"
-              >
-                Manx
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="munc"
-                type="button"
-                value="munc"
-              >
-                Munchkin
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="nebe"
-                type="button"
-                value="nebe"
-              >
-                Nebelung
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="norw"
-                type="button"
-                value="norw"
-              >
-                Norwegian Forest Cat
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="ocic"
-                type="button"
-                value="ocic"
-              >
-                Ocicat
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="orie"
-                type="button"
-                value="orie"
-              >
-                Oriental
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="pers"
-                type="button"
-                value="pers"
-              >
-                Persian
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="pixi"
-                type="button"
-                value="pixi"
-              >
-                Pixie-bob
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="raga"
-                type="button"
-                value="raga"
-              >
-                Ragamuffin
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="ragd"
-                type="button"
-                value="ragd"
-              >
-                Ragdoll
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="rblu"
-                type="button"
-                value="rblu"
-              >
-                Russian Blue
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="sava"
-                type="button"
-                value="sava"
-              >
-                Savannah
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="sfol"
-                type="button"
-                value="sfol"
-              >
-                Scottish Fold
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="srex"
-                type="button"
-                value="srex"
-              >
-                Selkirk Rex
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="siam"
-                type="button"
-                value="siam"
-              >
-                Siamese
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="sibe"
-                type="button"
-                value="sibe"
-              >
-                Siberian
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="sing"
-                type="button"
-                value="sing"
-              >
-                Singapura
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="snow"
-                type="button"
-                value="snow"
-              >
-                Snowshoe
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="soma"
-                type="button"
-                value="soma"
-              >
-                Somali
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="sphy"
-                type="button"
-                value="sphy"
-              >
-                Sphynx
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="tonk"
-                type="button"
-                value="tonk"
-              >
-                Tonkinese
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="toyg"
-                type="button"
-                value="toyg"
-              >
-                Toyger
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="tang"
-                type="button"
-                value="tang"
-              >
-                Turkish Angora
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="tvan"
-                type="button"
-                value="tvan"
-              >
-                Turkish Van
-              </button>
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              role="button"
-            >
-              <button
-                class="btn btn-primary"
-                classlist="dropdown-item"
-                data-testid="ycho"
-                type="button"
-                value="ycho"
-              >
-                York Chocolate
-              </button>
-            </a>
+            <div
+              class="flex-column mt-auto mb-auto navbar-nav"
+            >
+              <div
+                class="m-auto a-hover w-100 text-center d-none nav-item"
+              >
+                <a
+                  class="nav-link-custom"
+                  href="#/subjects"
+                >
+                  <div
+                    class="link-box"
+                  >
+                    SUBJECTS
+                  </div>
+                </a>
+              </div>
+              <div
+                class="m-auto a-hover w-100 text-center d-none nav-item"
+              >
+                <a
+                  class="nav-link-custom"
+                  href="#/appointmentslist"
+                >
+                  <div
+                    class="link-box"
+                  >
+                    APPOINTMENTS
+                  </div>
+                </a>
+              </div>
+              <div
+                class="m-auto a-hover w-100 text-center nav-item"
+              >
+                <a
+                  class="nav-link-custom"
+                  href="#/login"
+                >
+                  <div
+                    class="link-box"
+                  >
+                    LOGIN
+                  </div>
+                </a>
+              </div>
+              <div
+                class="m-auto a-hover w-100 text-center nav-item"
+              >
+                <a
+                  class="nav-link-custom"
+                  data-testid="signup_menu"
+                  href="#/signup"
+                >
+                  <div
+                    class="link-box"
+                  >
+                    SIGNUP
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="mt-auto d-none"
+            >
+              <div
+                class="flex-column text-center"
+              >
+                <div />
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  Log out
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class=""
-      >
         <button
-          aria-controls="collapse-filter-form"
-          aria-expanded="false"
-          class="btn btn-primary"
+          aria-controls="responsive-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
           type="button"
         >
-          Filter
+          <span
+            class="navbar-toggler-icon"
+          />
         </button>
-      </div>
-    </div>
-  </nav>
-  <div
-    class="collapse"
-    id="collapse-filter-form"
-  >
-    <div
-      class="bg-dark text-light p-3"
-    >
-      <form>
-        <div
-          class="ml-auto mr-3 font-weight-bold"
-        >
-          Filter by
-        </div>
-        <label
-          class="ml-auto"
-          for="experimental"
-        >
-          Experimental
-          <input
-            class="mr-3 ml-1"
-            data-testid="experimental_enable"
-            id="experimental"
-            type="checkbox"
-            value="experimental"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="hairless"
-        >
-          Hairless
-          <input
-            class="mr-3 ml-1"
-            data-testid="hairless_enable"
-            id="hairless"
-            type="checkbox"
-            value="hairless"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="natural"
-        >
-          Natural
-          <input
-            class="mr-3 ml-1"
-            data-testid="natural_enable"
-            id="natural"
-            type="checkbox"
-            value="natural"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="rare"
-        >
-          Rare
-          <input
-            class="mr-3 ml-1"
-            data-testid="rare_enable"
-            id="rare"
-            type="checkbox"
-            value="rare"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="suppressed_tail"
-        >
-          Suppressed tail
-          <input
-            class="mr-3 ml-1"
-            data-testid="suppressed_tail_enable"
-            id="suppressed_tail"
-            type="checkbox"
-            value="suppressed_tail"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="short_legs"
-        >
-          Short legs
-          <input
-            class="mr-3 ml-1"
-            data-testid="short_legs_enable"
-            id="short_legs"
-            type="checkbox"
-            value="short_legs"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="hypoallergenic"
-        >
-          Hypoallergenic
-          <input
-            class="mr-3 ml-1"
-            data-testid="hypoallergenic_enable"
-            id="hypoallergenic"
-            type="checkbox"
-            value="hypoallergenic"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="adaptability"
-        >
-          Adaptability
-          <input
-            class="mr-3 ml-1"
-            data-testid="adaptability_enable"
-            id="adaptability"
-            type="checkbox"
-            value="adaptability"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="affection_level"
-        >
-          Affection level
-          <input
-            class="mr-3 ml-1"
-            data-testid="affection_level_enable"
-            id="affection_level"
-            type="checkbox"
-            value="affection_level"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="child_friendly"
-        >
-          Child friendly
-          <input
-            class="mr-3 ml-1"
-            data-testid="child_friendly_enable"
-            id="child_friendly"
-            type="checkbox"
-            value="child_friendly"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="dog_friendly"
-        >
-          Dog friendly
-          <input
-            class="mr-3 ml-1"
-            data-testid="dog_friendly_enable"
-            id="dog_friendly"
-            type="checkbox"
-            value="dog_friendly"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="energy_level"
-        >
-          Energy level
-          <input
-            class="mr-3 ml-1"
-            data-testid="energy_level_enable"
-            id="energy_level"
-            type="checkbox"
-            value="energy_level"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="grooming"
-        >
-          Grooming
-          <input
-            class="mr-3 ml-1"
-            data-testid="grooming_enable"
-            id="grooming"
-            type="checkbox"
-            value="grooming"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="health_issues"
-        >
-          Health issues
-          <input
-            class="mr-3 ml-1"
-            data-testid="health_issues_enable"
-            id="health_issues"
-            type="checkbox"
-            value="health_issues"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="intelligence"
-        >
-          Intelligence
-          <input
-            class="mr-3 ml-1"
-            data-testid="intelligence_enable"
-            id="intelligence"
-            type="checkbox"
-            value="intelligence"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="shedding_level"
-        >
-          Shedding level
-          <input
-            class="mr-3 ml-1"
-            data-testid="shedding_level_enable"
-            id="shedding_level"
-            type="checkbox"
-            value="shedding_level"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="social_needs"
-        >
-          Social needs
-          <input
-            class="mr-3 ml-1"
-            data-testid="social_needs_enable"
-            id="social_needs"
-            type="checkbox"
-            value="social_needs"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="stranger_friendly"
-        >
-          Stranger friendly
-          <input
-            class="mr-3 ml-1"
-            data-testid="stranger_friendly_enable"
-            id="stranger_friendly"
-            type="checkbox"
-            value="stranger_friendly"
-          />
-        </label>
-        <label
-          class="ml-auto"
-          for="vocalisation"
-        >
-          Vocalisation
-          <input
-            class="mr-3 ml-1"
-            data-testid="vocalisation_enable"
-            id="vocalisation"
-            type="checkbox"
-            value="vocalisation"
-          />
-        </label>
-        <hr />
-        <div
-          class="ml-auto mr-3 font-weight-bold d-none"
-        >
-          Filter preferences
-        </div>
-        <label
-          class="ml-auto d-none"
-          data-testid="experimental"
-          for="experimental"
-        >
-          <span>
-            Experimental
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="experimental"
-            type="checkbox"
-            value="experimental"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="hairless"
-          for="hairless"
-        >
-          <span>
-            Hairless
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="hairless"
-            type="checkbox"
-            value="hairless"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="natural"
-          for="natural"
-        >
-          <span>
-            Natural
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="natural"
-            type="checkbox"
-            value="natural"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="rare"
-          for="rare"
-        >
-          <span>
-            Rare
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="rare"
-            type="checkbox"
-            value="rare"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="suppressed_tail"
-          for="suppressed_tail"
-        >
-          <span>
-            Suppressed tail
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="suppressed_tail"
-            type="checkbox"
-            value="suppressed_tail"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="short_legs"
-          for="short_legs"
-        >
-          <span>
-            Short legs
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="short_legs"
-            type="checkbox"
-            value="short_legs"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="hypoallergenic"
-          for="hypoallergenic"
-        >
-          <span>
-            Hypoallergenic
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="hypoallergenic"
-            type="checkbox"
-            value="hypoallergenic"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="adaptability"
-          for="adaptability"
-        >
-          <span>
-            Adaptability
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="adaptability"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="affection_level"
-          for="affection_level"
-        >
-          <span>
-            Affection level
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="affection_level"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="child_friendly"
-          for="child_friendly"
-        >
-          <span>
-            Child friendly
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="child_friendly"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="dog_friendly"
-          for="dog_friendly"
-        >
-          <span>
-            Dog friendly
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="dog_friendly"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="energy_level"
-          for="energy_level"
-        >
-          <span>
-            Energy level
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="energy_level"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="grooming"
-          for="grooming"
-        >
-          <span>
-            Grooming
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="grooming"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="health_issues"
-          for="health_issues"
-        >
-          <span>
-            Health issues
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="health_issues"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="intelligence"
-          for="intelligence"
-        >
-          <span>
-            Intelligence
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="intelligence"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="shedding_level"
-          for="shedding_level"
-        >
-          <span>
-            Shedding level
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="shedding_level"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="social_needs"
-          for="social_needs"
-        >
-          <span>
-            Social needs
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="social_needs"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="stranger_friendly"
-          for="stranger_friendly"
-        >
-          <span>
-            Stranger friendly
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="stranger_friendly"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-        <label
-          class="ml-auto d-none"
-          data-testid="vocalisation"
-          for="vocalisation"
-        >
-          <span>
-            Vocalisation
-          </span>
-          <input
-            class="mr-3 ml-1"
-            disabled=""
-            id="vocalisation"
-            max="5"
-            min="1"
-            type="number"
-            value="1"
-          />
-        </label>
-      </form>
-    </div>
-  </div>
-  <div
-    class="m-3 container"
-  >
-    <div
-      class="row"
-    >
+      </nav>
       <div
-        class="col"
+        class="col-lg-10 col-12 h-100"
       >
         <div>
-          Native to the Greek islands known as the Cyclades in the Aegean Sea, these are natural cats, meaning they developed without humans getting involved in their breeding. As a breed, Aegean Cats are rare, although they are numerous on their home islands. They are generally friendly toward people and can be excellent cats for families with children.
-        </div>
-        <div>
-          <a
-            href="#"
+          <div
+            class="fade alert alert-success show"
+            role="alert"
           >
-            CFA website
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://en.wikipedia.org/wiki/Aegean_cat"
+            <p>
+              Signed up successfully!
+            </p>
+            <p>
+              <button
+                class="btn btn-primary"
+                type="button"
+              >
+                Ok
+              </button>
+            </p>
+          </div>
+          <h1>
+            Sign up
+          </h1>
+          <form
+            class=""
           >
-            Wikipedia page
-          </a>
-        </div>
-      </div>
-      <div
-        class="col"
-      >
-        <div>
-          <img
-            alt=""
-            class="w-75"
-            src="https://cdn2.thecatapi.com/images/ozEvzdVM-.jpg"
-          />
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="formBasicEmail"
+              >
+                Email address
+              </label>
+              <input
+                class="form-control"
+                data-testid="email"
+                id="formBasicEmail"
+                placeholder="Enter email"
+                type="email"
+              />
+              <small
+                class="text-muted form-text"
+              >
+                We will never share your email with anyone else.
+              </small>
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="formBasicPassword"
+              >
+                Password
+              </label>
+              <input
+                class="form-control"
+                data-testid="password"
+                id="formBasicPassword"
+                minlength="8"
+                placeholder="Password"
+                type="password"
+              />
+            </div>
+            <button
+              class="btn btn-primary"
+              data-testid="submit_signup"
+              type="submit"
+            >
+              Sign up
+            </button>
+          </form>
         </div>
       </div>
     </div>

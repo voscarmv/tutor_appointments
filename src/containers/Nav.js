@@ -30,7 +30,7 @@ const NavB = () => {
               <Nav.Item className={`m-auto a-hover w-100 text-center${authKeyState.uid === null ? ' d-none' : ''}`}><Link className="nav-link-custom" to="/subjects"><div className="link-box">SUBJECTS</div></Link></Nav.Item>
               <Nav.Item className={`m-auto a-hover w-100 text-center${authKeyState.uid === null ? ' d-none' : ''}`}><Link className="nav-link-custom" to="/appointmentslist"><div className="link-box">APPOINTMENTS</div></Link></Nav.Item>
               <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/login"><div className="link-box">LOGIN</div></Link></Nav.Item>
-              <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" to="/signup"><div className="link-box">SIGNUP</div></Link></Nav.Item>
+              <Nav.Item className="m-auto a-hover w-100 text-center"><Link className="nav-link-custom" data-testid="signup_menu" to="/signup"><div className="link-box">SIGNUP</div></Link></Nav.Item>
             </Nav>
             <div className={`mt-auto${authKeyState.uid === null ? ' d-none' : ''}`}>
               <div className="flex-column text-center">

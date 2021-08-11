@@ -72,7 +72,7 @@ export const fetchLogIn = (data, history) => async dispatch => {
   try {
     const jsonUpdate = data;
     const getLogin = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/login',
+      'http://localhost:3002/login',
       {
         method: 'POST',
         headers: {
@@ -107,7 +107,7 @@ export const fetchSignUp = (data, history) => async dispatch => {
     const jsonUpdate = data;
 
     const getSignUp = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/signup',
+      'http://localhost:3002/signup',
       {
         method: 'POST',
         mode: 'cors',
@@ -155,7 +155,7 @@ export const fetchLogOut = (data, history) => async dispatch => {
   dispatch(fetchLogOutRequest());
   try {
     const getLogout = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/logout',
+      'http://localhost:3002/logout',
       {
         method: 'DELETE',
         headers: {
@@ -197,7 +197,7 @@ export const fetchSubjects = data => async dispatch => {
   dispatch(fetchSubjectsRequest());
   try {
     const getSubjects = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/subjects',
+      'http://localhost:3002/subjects',
       {
         method: 'GET',
         headers: {
@@ -241,7 +241,7 @@ export const postAppointment = (data, key, history) => async dispatch => {
     const jsonUpdate = { appointment: data };
 
     const getAppointment = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/appointments',
+      'http://localhost:3002/appointments',
       {
         method: 'POST',
         headers: {
@@ -283,7 +283,7 @@ export const fetchAppointment = data => async dispatch => {
   dispatch(fetchAppointmentRequest());
   try {
     const getAppointment = await fetch(
-      'https://thawing-beyond-27762.herokuapp.com/appointments',
+      'http://localhost:3002/appointments',
       {
         method: 'GET',
         headers: {
