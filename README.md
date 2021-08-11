@@ -20,7 +20,7 @@ Before installing, you should run the [API server](https://github.com/voscarmv/t
 - Visit `http://localhost:3000`
 
 ## Demo
-[Click here](https://inspiring-darwin-0afe5b.netlify.app/#/subjects) to try out the App!
+[Click here](https://inspiring-darwin-0afe5b.netlify.app/) to try out the App!
 
 ## Author
 
