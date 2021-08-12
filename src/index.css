@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'vespa';
+  src: local('vespa'), url('./fonts/vespa.ttf');
+}
+
+body {
+  margin: 0;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+#root {
+  height: 100vh;
+}
+
+.nav-item {
+  margin: auto;
+}
+
+.nav-link-custom {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.nav-item:hover,
+.nav-item:hover > a {
+  color: #fff;
+  background-color: #97bf10;
+}
+
+.link-box {
+  padding: 10px;
+}
+
+.mockup {
+  width: auto;
+  height: 90%;
+  object-fit: contain;
+}
+
+.c-container {
+  height: 500px;
+}
+
+.vespa-text {
+  font-family: vespa, Arial, Helvetica, sans-serif;
+  transform: rotate(-15deg);
+  display: block;
+  font-size: 30px;
+  color: black;
+}
+
+.tutorname {
+  color: black !important;
+  text-shadow: 0 0 5px white;
+}
+
+.carousel-inner {
+  background-color: darkgray !important;
+}
